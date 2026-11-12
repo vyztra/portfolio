@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Justin Leonard, Creative Director</title>
+<meta name="description" content="Emmy-award winning producer and creative director. Three case studies in using AI to win the direction early and pressure-test the work: a trailer wrap, a dealer website concept and a horror game.">
+<meta name="author" content="Justin Leonard">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Justin Leonard">
+<meta property="og:title" content="Justin Leonard, Creative Director">
+<meta property="og:description" content="Emmy-award winning producer and creative director. Three case studies in using AI to win the direction early and pressure-test the work: a trailer wrap, a dealer website concept and a horror game.">
+<meta property="og:image" content="https://vyztra.github.io/portfolio/assets/og-home.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://vyztra.github.io/portfolio/index.html">
+<link rel="canonical" href="https://vyztra.github.io/portfolio/index.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Justin Leonard, Creative Director">
+<meta name="twitter:description" content="Emmy-award winning producer and creative director. Three case studies in using AI to win the direction early and pressure-test the work: a trailer wrap, a dealer website concept and a horror game.">
+<meta name="twitter:image" content="https://vyztra.github.io/portfolio/assets/og-home.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Shared system. Theme-specific values (fonts, display weight, case, accent, sizes) come from the
+   theme block build.py appends after this file. Everything here reads those variables. */
+:root{
+  --bg:#0A0A0A;--bg2:#121212;--bg3:#1A1A1A;
+  --fg:#F2F2F0;--soft:#A3A3A3;--dim:#8C8C8C;
+  --line:#262626;--line2:#3A3A3A;
+  --gut:clamp(16px,4.2vw,56px);
+  --max:1320px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.mono{font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+em.a,.a{font-style:normal;color:var(--dim)}
+.soft{color:var(--soft)}
+.paper{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(10,10,10,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{display:inline-flex;align-items:center;gap:10px;font:var(--dw) 22px/1 var(--display);text-transform:var(--dcase);letter-spacing:var(--brand-track);text-decoration:none;white-space:nowrap}
+.brand i{display:inline-block;width:10px;height:10px;background:var(--accent)}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:var(--soft);font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.nav ul a:hover{color:#fff}
+@media (max-width:760px){.nav ul li.hide-s{display:none}.nav ul{gap:16px}}
+
+/* type scale: display font, weight, case and tracking come from the theme */
+.h-xl,.h-l,.h-m,.h-s,.statement{font-family:var(--display);font-weight:var(--dw);margin:0}
+.h-xl{font-size:var(--xl);line-height:var(--xl-lh);letter-spacing:var(--track-xl);text-transform:var(--dcase)}
+.h-l{font-size:var(--l);line-height:var(--l-lh);letter-spacing:var(--track-l);text-transform:var(--dcase)}
+.statement{font-size:var(--stmt);line-height:var(--l-lh);letter-spacing:var(--track-l);text-transform:var(--dcase);max-width:1200px}
+.h-m{font-size:var(--m);line-height:1.04;letter-spacing:var(--track-m)}
+.h-s{font-size:var(--s);line-height:1.1;letter-spacing:var(--track-m)}
+.lede{font:400 clamp(19px,1.9vw,24px)/1.5 var(--sans);letter-spacing:-.005em;max-width:820px}
+p{margin:0 0 16px}
+
+/* section scaffolding */
+.sec{padding:clamp(80px,11vw,150px) 0}
+.sec.tight{padding-top:clamp(40px,6vw,80px)}
+.sec-head{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:20px 40px;align-items:start;margin-bottom:clamp(36px,5vw,64px)}
+.sec-head .idx{display:flex;flex-direction:column;gap:8px;padding-top:12px;border-top:2px solid var(--accent)}
+.sec-head .idx .n{font:var(--dw) 40px/1 var(--display);color:var(--fg)}
+.sec-head .idx .mono{color:var(--soft)}
+@media (max-width:860px){.sec-head{grid-template-columns:1fr}.sec-head .idx{flex-direction:row;align-items:baseline;gap:14px}}
+.cols{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:0 40px}
+.cols>.body{max-width:720px}
+@media (max-width:860px){.cols{grid-template-columns:1fr}.cols>.spacer{display:none}}
+
+/* figures */
+figure{margin:0}
+.fig{margin-top:clamp(28px,4vw,48px)}
+.frame{position:relative;border-radius:var(--radius);overflow:hidden;background:#1B1B1B}
+.frame.bordered{border:1px solid var(--line)}
+.frame img,.frame video{width:100%;height:auto}
+figcaption{display:flex;gap:8px 16px;flex-wrap:wrap;align-items:baseline;margin-top:12px;font-size:14px;line-height:1.5;color:var(--soft)}
+figcaption .mono{color:var(--fg);flex:none}
+.tag{position:absolute;top:12px;left:12px;z-index:2;font:600 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border-radius:var(--tag-radius);background:rgba(10,10,10,.85);color:#fff;border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px)}
+.tag.ai{background:var(--accent);border-color:var(--accent);color:#000}
+.tag.final{background:#F2F2F0;color:#0A0A0A;border-color:#F2F2F0}
+.tag.r{left:auto;right:12px}
+@media (max-width:600px){.tag{top:8px;left:8px;padding:5px 7px;letter-spacing:.05em}.tag.r{right:8px}}
+/* crop: show one region of a larger source image without editing the file */
+.crop{position:relative;overflow:hidden}
+.crop>img{position:absolute;max-width:none;height:auto}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,22px)}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,22px)}
+@media (max-width:760px){.g2,.g3{grid-template-columns:minmax(0,1fr)}}
+.g3.keep2{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:760px){.g3.keep2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* meta row */
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;border-top:1px solid var(--line);padding-top:20px;margin-top:clamp(40px,6vw,72px)}
+.meta b{display:block;font:500 16px/1.4 var(--sans);margin-top:8px;color:#fff}
+.meta .mono{color:var(--soft)}
+@media (max-width:860px){.meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ledger lists */
+.ledger{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.ledger li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.ledger .k{font:var(--dw) 28px/1 var(--display);color:var(--accent)}
+.ledger h3{font:600 18px/1.35 var(--sans);margin:0 0 4px;color:#fff}
+.ledger p{margin:0;color:var(--soft)}
+
+/* quote */
+.quote{border-left:3px solid var(--accent);padding:4px 0 4px 22px;margin:28px 0 0;font:500 clamp(20px,2vw,26px)/1.4 var(--sans);max-width:760px;color:#fff}
+.quote cite{display:block;margin-top:10px;font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;font-style:normal;color:var(--soft)}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+@media (max-width:860px){.nums{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.num{border-top:2px solid var(--fg);padding-top:14px}
+.num .v{font-family:var(--display);font-weight:var(--dw);font-size:var(--num);line-height:.9;letter-spacing:var(--track-l);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.num .v small{font:500 13px/1 var(--mono);letter-spacing:.08em;color:var(--soft)}
+.num .v .to{color:var(--accent)}
+.num p{font-size:15px;margin:10px 0 0;color:var(--soft)}
+
+/* empty room */
+.empty{border:1.5px dashed var(--line2);border-radius:var(--radius);padding:clamp(22px,3vw,34px);color:var(--soft)}
+.empty b{color:#fff;font-weight:600}
+
+/* role / tools */
+.spec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,44px)}
+@media (max-width:860px){.spec{grid-template-columns:minmax(0,1fr)}}
+.spec h3{font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;padding-top:12px;border-top:2px solid var(--fg);color:var(--soft)}
+.spec ul{list-style:none;margin:0;padding:0}
+.spec li{padding:8px 0;border-bottom:1px solid var(--line);font-size:16px}
+
+/* footer, next link, buttons */
+.foot{border-top:1px solid var(--line);padding:44px 0 60px;color:var(--soft);font-size:14px}
+.foot .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px 48px}
+@media (max-width:760px){.foot .wrap{grid-template-columns:minmax(0,1fr)}}
+.next{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;text-decoration:none;padding-top:clamp(48px,7vw,90px);padding-bottom:clamp(48px,7vw,90px);border-top:1px solid var(--line)}
+.next .h-l{transition:color .2s}
+.next:hover .h-l{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:var(--btn-radius);background:#F2F2F0;color:#0A0A0A;text-decoration:none;font:600 15px/1 var(--sans);border:1px solid #F2F2F0}
+.btn.ghost{background:transparent;color:#F2F2F0;border-color:var(--line2)}
+.btn:hover{background:var(--accent);color:#000;border-color:var(--accent)}
+.arrow{display:inline-block;transition:transform .2s}
+a:hover .arrow{transform:translateX(4px)}
+
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .rise.d1{animation-delay:.06s}.rise.d2{animation-delay:.12s}.rise.d3{animation-delay:.18s}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+}
+@media (max-width:600px){.frame:has(>.tag:not(.r))>.tag.r{top:auto;bottom:8px}}
+
+:root{--display:'Barlow Condensed','Arial Narrow',sans-serif;--sans:'Barlow','Helvetica Neue',Arial,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+--dw:800;--dcase:uppercase;--brand-track:.03em;--accent:#FF2D20;
+--xl:clamp(60px,11.6vw,190px);--xl-lh:.86;--track-xl:-.012em;
+--l:clamp(44px,6.8vw,110px);--l-lh:.9;--track-l:-.006em;--stmt:clamp(44px,7.6vw,128px);
+--m:clamp(30px,3.4vw,50px);--s:clamp(26px,2.4vw,34px);--track-m:0;--num:clamp(64px,7.6vw,116px);
+--name:clamp(88px,16.5vw,250px);--radius:3px;--tag-radius:2px;--btn-radius:2px}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="#top"><i></i>Justin Leonard</a>
+  <ul><li><a href="#work">Work</a></li><li class="hide-s"><a href="#approach">Approach</a></li><li class="hide-s"><a href="#credentials">Credentials</a></li><li><a href="#contact">Contact</a></li></ul>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="mono soft rise">Creative director &nbsp;/&nbsp; Producer &nbsp;/&nbsp; Portfolio 2026</div>
+    <div class="hero-top">
+      <h1 class="h-xl rise d1 name">Justin<br><em class="a">Leonard</em></h1>
+      <ol class="toc rise d2" aria-label="In this portfolio">
+        <li><a href="trailer-wrap.html"><span class="mono">01</span><b>Trailer wrap</b><span class="mono soft">AI concept to final proof</span></a></li>
+        <li><a href="website-concept.html"><span class="mono">02</span><b>Dealer website</b><span class="mono soft">Research-led concept</span></a></li>
+        <li><a href="horror-concept.html"><span class="mono">03</span><b>Horror game</b><span class="mono soft">In preproduction</span></a></li>
+      </ol>
+    </div>
+    <div class="hero-row rise d2">
+      <p class="lede">Emmy-award winning producer and creative director. I own the work from the first idea to the file that ships, and I use AI where it adds real value: to win the direction early, and to pressure-test the work before a client ever sees it.</p>
+      <div class="ctas"><a class="btn" href="https://vimeo.com/showcase/11826015" target="_blank" rel="noopener">Watch the work <span class="arrow">&rarr;</span></a><a class="btn ghost" href="#work">See the case studies <span class="arrow">&darr;</span></a></div>
+    </div>
+  </div>
+</header>
+<style>
+.hero{padding:clamp(56px,8vw,120px) 0 clamp(48px,7vw,96px)}
+.name{margin-top:22px;font-size:var(--name)}
+.hero-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px);gap:40px;align-items:end}
+.toc{list-style:none;margin:0;padding:0;border-top:2px solid var(--accent)}
+.toc a{display:grid;grid-template-columns:34px minmax(0,1fr);gap:2px 10px;padding:16px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.toc .mono:first-child{color:var(--accent);grid-row:span 2;padding-top:5px}
+.toc b{font:var(--dw) 26px/1.05 var(--display);text-transform:var(--dcase);letter-spacing:var(--track-m);color:#fff}
+.toc a:hover b{color:var(--accent)}
+.hero-row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px 56px;align-items:end;margin-top:clamp(32px,5vw,56px)}
+.hero-row .lede{color:#D4D4D2;margin:0}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+@media (max-width:1199px){.hero-top{grid-template-columns:minmax(0,1fr)}.toc{display:none}}
+@media (max-width:900px){.hero-row{grid-template-columns:minmax(0,1fr)}.ctas{justify-content:flex-start}}
+</style>
+
+<section class="creds" id="credentials" aria-label="Credentials">
+  <div class="wrap">
+    <a class="cred" href="https://vimeo.com/692388463/b7e3bb5e62" target="_blank" rel="noopener"><span class="mono">01</span><b>Emmy-award winning</b><span class="soft">Boys &amp; Girls Club piece, produced and shot with Oak Film Co. Watch it <span class="arrow">&rarr;</span></span></a>
+    <div class="cred"><span class="mono">02</span><b>Silver ADDY</b><span class="soft">Koda's Kids Football Camp, Alison South Marketing</span></div>
+    <div class="cred"><span class="mono">03</span><b>Certified Knowledge Manager</b><span class="soft">CKM, Knowledge Management Institute</span></div>
+    <div class="cred"><span class="mono">04</span><b>14 years</b><span class="soft">In creative production, since 2012</span></div>
+  </div>
+</section>
+<style>
+.creds{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+.creds .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.cred{display:flex;flex-direction:column;gap:6px;padding:26px 22px 26px 0;text-decoration:none;font-size:14px;line-height:1.45}
+.cred+.cred{padding-left:22px;border-left:1px solid var(--line)}
+.cred .mono{color:var(--accent)}
+.cred b{font:var(--dw) clamp(24px,2.3vw,32px)/1.05 var(--display);text-transform:var(--dcase);letter-spacing:var(--track-m);color:#fff}
+a.cred:hover b{color:var(--accent)}
+@media (max-width:860px){.creds .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}.cred:nth-child(3){padding-left:0;border-left:0}.cred:nth-child(n+3){border-top:1px solid var(--line)}}
+</style>
+
+<section class="sec" id="work">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">01</span><span class="mono">Selected work</span></div>
+      <h2 class="h-l">The work, and <em class="a">where AI fit in.</em></h2></div>
+
+    <a class="tile feature" href="trailer-wrap.html">
+      <div class="duo">
+        <div class="frame"><img src="assets/trailer-ai-concept-fendt-side.jpg" alt="AI concept render of the Fendt side of the trailer"><span class="tag ai">AI concept</span></div>
+        <div class="frame crop" style="aspect-ratio:2.157"><img src="assets/trailer-proof-2-fendt.jpg" alt="Final proof of the Fendt side panel" style="width:111.86%;left:-5.93%;top:-45.95%" loading="lazy" decoding="async"><span class="tag final r">Final proof &middot; 2026-10-29</span></div>
+      </div>
+      <div class="tile-text">
+        <div><div class="mono soft">01 &nbsp;/&nbsp; Trailer wrap &nbsp;/&nbsp; AgRevolution</div><h3 class="h-m">From AI concept to final proof.</h3></div>
+        <div><p>Generated renders won the client's direction in a week. Then the wrap was rebuilt for print with the client's own photography, official logos and live type, and the generator's mistakes were caught before anything reached a printer.</p><span class="more">Read the case study <span class="arrow">&rarr;</span></span></div>
+      </div>
+    </a>
+
+    <div class="g2 pair-tiles">
+      <a class="tile" href="website-concept.html">
+        <div class="frame"><img src="assets/web-home-desktop.jpg" alt="Dealer website prototype homepage: The shop comes to your field" loading="lazy" decoding="async"><span class="tag">Prototype v4</span></div>
+        <div class="mono soft" style="margin-top:20px">02 &nbsp;/&nbsp; Dealer website concept</div>
+        <h3 class="h-s" style="margin-top:8px">Research-led, then reviewed hard.</h3>
+        <p>499 pages crawled, 353 dealer sites checked, three hostile reviews. Phone speed score 54 to 94.</p>
+        <span class="more">Read the case study <span class="arrow">&rarr;</span></span>
+      </a>
+      <a class="tile" href="horror-concept.html">
+        <div class="frame"><video muted loop playsinline autoplay preload="metadata" poster="assets/horror-gameplay-teaser-poster.jpg" aria-label="Gameplay capture: a stand-in player walks up a dark stone hall and fights an enemy under a surgical lamp"><source src="assets/horror-gameplay-teaser.mp4" type="video/mp4"></video><span class="tag">Gameplay capture &middot; 2026-11-11</span><span class="tag ai r">In preproduction</span></div>
+        <div class="mono soft" style="margin-top:20px">03 &nbsp;/&nbsp; Horror game</div>
+        <h3 class="h-s" style="margin-top:8px">Built in engine, labelled honestly.</h3>
+        <p>A horror game in preproduction. From generated concept to a running Unreal Engine 5 test room, with its core reality-shift mechanic working and every frame labelled for what it is.</p>
+        <span class="more">Read the case study <span class="arrow">&rarr;</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+<style>
+.tile{display:block;text-decoration:none;color:inherit}
+.tile p{color:var(--soft);margin:10px 0 0;max-width:560px}
+.more{display:inline-flex;gap:8px;margin-top:16px;font:600 15px/1 var(--sans);border-bottom:2px solid var(--accent);padding-bottom:5px;color:#fff}
+.feature .duo{display:grid;grid-template-columns:1.777fr 2.157fr;gap:clamp(8px,1.2vw,16px)}
+@media (max-width:760px){.feature .duo{grid-template-columns:minmax(0,1fr)}}
+.tile-text{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 48px;margin-top:24px;align-items:start}
+.tile-text .h-m{margin-top:10px}
+.tile-text p{margin-top:0}
+@media (max-width:860px){.tile-text{grid-template-columns:minmax(0,1fr)}}
+.pair-tiles{margin-top:clamp(56px,8vw,96px);gap:clamp(24px,3vw,40px)}
+.pair-tiles .frame{aspect-ratio:16/10}
+.pair-tiles .frame img,.pair-tiles .frame video{width:100%;height:100%;object-fit:cover;object-position:top}
+</style>
+
+<section class="sec paper" id="approach">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">02</span><span class="mono">How I use AI</span></div>
+      <h2 class="h-l">Two workflows. <em class="a">One standard.</em></h2></div>
+    <a class="flow" href="trailer-wrap.html">
+      <span class="k">01</span>
+      <p>I use generation to win the direction, then <em class="a">rebuild every machine, logo and location from real sources.</em></p>
+      <span class="mono soft">Trailer wrap <span class="arrow">&rarr;</span></span>
+    </a>
+    <a class="flow" href="website-concept.html">
+      <span class="k">02</span>
+      <p>AI as research staff and a hostile review panel, <em class="a">not a pixel machine.</em></p>
+      <span class="mono soft">Website concept <span class="arrow">&rarr;</span></span>
+    </a>
+  </div>
+</section>
+<style>
+.flow{display:grid;grid-template-columns:80px minmax(0,1fr) 200px;gap:12px 32px;align-items:baseline;padding:clamp(28px,4vw,48px) 0;border-top:1px solid var(--line);text-decoration:none}
+.flow:last-child{border-bottom:1px solid var(--line)}
+.flow .k{font:var(--dw) 44px/1 var(--display);color:var(--accent)}
+.flow p{font:var(--dw) var(--m)/1.06 var(--display);letter-spacing:var(--track-m);margin:0;color:#fff}
+.flow .mono{text-align:right}
+.flow:hover .mono{color:#fff}
+@media (max-width:860px){.flow{grid-template-columns:minmax(0,1fr)}.flow .mono{text-align:left}}
+</style>
+
+<section class="sec tight" id="also" style="padding-bottom:clamp(64px,9vw,120px)">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:28px"><div class="idx"><span class="n">03</span><span class="mono">Also building</span></div><div></div></div>
+    <ul class="ledger">
+      <li><span class="k">A</span><div><h3>OneYard</h3><p>A product-design concept for a dealer's used-equipment marketplace: a clickable concept and a pilot plan. OneYard is a working name.</p></div></li>
+      <li><span class="k">B</span><div><h3>My own agentic AI system</h3><p>One search door to every project I run, with specialist agents that build, review and fact-check work before anyone sees it.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec paper contact" id="contact">
+  <div class="wrap">
+    <div class="mono soft">Contact</div>
+    <h2 class="h-xl" style="margin-top:18px">Let's <em class="a">talk.</em></h2>
+    <a class="mail" href="mailto:justin@just-leonard.com">justin@just-leonard.com</a>
+    <div class="links">
+      <a href="https://vimeo.com/showcase/11826015" target="_blank" rel="noopener"><span class="mono soft">Watch the work</span><b>vimeo.com/showcase/11826015</b></a>
+      <a href="https://www.linkedin.com/in/justleonard" target="_blank" rel="noopener"><span class="mono soft">LinkedIn</span><b>linkedin.com/in/justleonard</b></a>
+      <a href="https://vimeo.com/692388463/b7e3bb5e62" target="_blank" rel="noopener"><span class="mono soft">Emmy-award winning piece</span><b>vimeo.com/692388463/b7e3bb5e62</b></a>
+    </div>
+  </div>
+</section>
+<style>
+.mail{display:inline-block;margin-top:clamp(28px,4vw,48px);font:var(--dw) clamp(28px,5vw,72px)/1.05 var(--display);letter-spacing:var(--track-m);text-decoration:none;border-bottom:3px solid var(--accent);padding-bottom:6px;overflow-wrap:anywhere}
+.mail:hover{color:var(--accent)}
+.contact .links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:clamp(40px,6vw,72px);border-top:1px solid var(--line);padding-top:22px}
+.contact .links a{text-decoration:none;display:flex;flex-direction:column;gap:8px}
+.contact .links b{font:500 17px/1.4 var(--sans);overflow-wrap:anywhere}
+.contact .links a:hover b{color:var(--accent)}
+@media (max-width:860px){.contact .links{grid-template-columns:minmax(0,1fr)}}
+</style>
+
+<footer class="foot"><div class="wrap">
+  <div><a class="brand" href="#top"><i></i>Justin Leonard</a></div>
+  <p>Trailer wrap: client work for AgRevolution. Website: a self-initiated concept, not commissioned by or affiliated with AgRevolution or AGCO. Fendt and Massey Ferguson are brands of AGCO Corporation. AI concept images are labelled wherever they appear.</p>
+</div></footer>
+</body>
+
+</html>

@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Trailer Wrap Case Study, Justin Leonard</title>
+<meta name="description" content="How AI image generation won a client's direction for a four-sided trailer wrap in a week, and how the wrap was rebuilt for print with real photography, official logos and live type.">
+<meta name="author" content="Justin Leonard">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Justin Leonard">
+<meta property="og:title" content="Trailer Wrap Case Study, Justin Leonard">
+<meta property="og:description" content="How AI image generation won a client's direction for a four-sided trailer wrap in a week, and how the wrap was rebuilt for print with real photography, official logos and live type.">
+<meta property="og:image" content="https://vyztra.github.io/portfolio/assets/og-trailer-wrap.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://vyztra.github.io/portfolio/trailer-wrap.html">
+<link rel="canonical" href="https://vyztra.github.io/portfolio/trailer-wrap.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trailer Wrap Case Study, Justin Leonard">
+<meta name="twitter:description" content="How AI image generation won a client's direction for a four-sided trailer wrap in a week, and how the wrap was rebuilt for print with real photography, official logos and live type.">
+<meta name="twitter:image" content="https://vyztra.github.io/portfolio/assets/og-trailer-wrap.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Shared system. Theme-specific values (fonts, display weight, case, accent, sizes) come from the
+   theme block build.py appends after this file. Everything here reads those variables. */
+:root{
+  --bg:#0A0A0A;--bg2:#121212;--bg3:#1A1A1A;
+  --fg:#F2F2F0;--soft:#A3A3A3;--dim:#8C8C8C;
+  --line:#262626;--line2:#3A3A3A;
+  --gut:clamp(16px,4.2vw,56px);
+  --max:1320px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.mono{font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+em.a,.a{font-style:normal;color:var(--dim)}
+.soft{color:var(--soft)}
+.paper{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(10,10,10,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{display:inline-flex;align-items:center;gap:10px;font:var(--dw) 22px/1 var(--display);text-transform:var(--dcase);letter-spacing:var(--brand-track);text-decoration:none;white-space:nowrap}
+.brand i{display:inline-block;width:10px;height:10px;background:var(--accent)}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:var(--soft);font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.nav ul a:hover{color:#fff}
+@media (max-width:760px){.nav ul li.hide-s{display:none}.nav ul{gap:16px}}
+
+/* type scale: display font, weight, case and tracking come from the theme */
+.h-xl,.h-l,.h-m,.h-s,.statement{font-family:var(--display);font-weight:var(--dw);margin:0}
+.h-xl{font-size:var(--xl);line-height:var(--xl-lh);letter-spacing:var(--track-xl);text-transform:var(--dcase)}
+.h-l{font-size:var(--l);line-height:var(--l-lh);letter-spacing:var(--track-l);text-transform:var(--dcase)}
+.statement{font-size:var(--stmt);line-height:var(--l-lh);letter-spacing:var(--track-l);text-transform:var(--dcase);max-width:1200px}
+.h-m{font-size:var(--m);line-height:1.04;letter-spacing:var(--track-m)}
+.h-s{font-size:var(--s);line-height:1.1;letter-spacing:var(--track-m)}
+.lede{font:400 clamp(19px,1.9vw,24px)/1.5 var(--sans);letter-spacing:-.005em;max-width:820px}
+p{margin:0 0 16px}
+
+/* section scaffolding */
+.sec{padding:clamp(80px,11vw,150px) 0}
+.sec.tight{padding-top:clamp(40px,6vw,80px)}
+.sec-head{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:20px 40px;align-items:start;margin-bottom:clamp(36px,5vw,64px)}
+.sec-head .idx{display:flex;flex-direction:column;gap:8px;padding-top:12px;border-top:2px solid var(--accent)}
+.sec-head .idx .n{font:var(--dw) 40px/1 var(--display);color:var(--fg)}
+.sec-head .idx .mono{color:var(--soft)}
+@media (max-width:860px){.sec-head{grid-template-columns:1fr}.sec-head .idx{flex-direction:row;align-items:baseline;gap:14px}}
+.cols{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:0 40px}
+.cols>.body{max-width:720px}
+@media (max-width:860px){.cols{grid-template-columns:1fr}.cols>.spacer{display:none}}
+
+/* figures */
+figure{margin:0}
+.fig{margin-top:clamp(28px,4vw,48px)}
+.frame{position:relative;border-radius:var(--radius);overflow:hidden;background:#1B1B1B}
+.frame.bordered{border:1px solid var(--line)}
+.frame img,.frame video{width:100%;height:auto}
+figcaption{display:flex;gap:8px 16px;flex-wrap:wrap;align-items:baseline;margin-top:12px;font-size:14px;line-height:1.5;color:var(--soft)}
+figcaption .mono{color:var(--fg);flex:none}
+.tag{position:absolute;top:12px;left:12px;z-index:2;font:600 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border-radius:var(--tag-radius);background:rgba(10,10,10,.85);color:#fff;border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px)}
+.tag.ai{background:var(--accent);border-color:var(--accent);color:#000}
+.tag.final{background:#F2F2F0;color:#0A0A0A;border-color:#F2F2F0}
+.tag.r{left:auto;right:12px}
+@media (max-width:600px){.tag{top:8px;left:8px;padding:5px 7px;letter-spacing:.05em}.tag.r{right:8px}}
+/* crop: show one region of a larger source image without editing the file */
+.crop{position:relative;overflow:hidden}
+.crop>img{position:absolute;max-width:none;height:auto}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,22px)}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,22px)}
+@media (max-width:760px){.g2,.g3{grid-template-columns:minmax(0,1fr)}}
+.g3.keep2{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:760px){.g3.keep2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* meta row */
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;border-top:1px solid var(--line);padding-top:20px;margin-top:clamp(40px,6vw,72px)}
+.meta b{display:block;font:500 16px/1.4 var(--sans);margin-top:8px;color:#fff}
+.meta .mono{color:var(--soft)}
+@media (max-width:860px){.meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ledger lists */
+.ledger{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.ledger li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.ledger .k{font:var(--dw) 28px/1 var(--display);color:var(--accent)}
+.ledger h3{font:600 18px/1.35 var(--sans);margin:0 0 4px;color:#fff}
+.ledger p{margin:0;color:var(--soft)}
+
+/* quote */
+.quote{border-left:3px solid var(--accent);padding:4px 0 4px 22px;margin:28px 0 0;font:500 clamp(20px,2vw,26px)/1.4 var(--sans);max-width:760px;color:#fff}
+.quote cite{display:block;margin-top:10px;font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;font-style:normal;color:var(--soft)}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+@media (max-width:860px){.nums{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.num{border-top:2px solid var(--fg);padding-top:14px}
+.num .v{font-family:var(--display);font-weight:var(--dw);font-size:var(--num);line-height:.9;letter-spacing:var(--track-l);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.num .v small{font:500 13px/1 var(--mono);letter-spacing:.08em;color:var(--soft)}
+.num .v .to{color:var(--accent)}
+.num p{font-size:15px;margin:10px 0 0;color:var(--soft)}
+
+/* empty room */
+.empty{border:1.5px dashed var(--line2);border-radius:var(--radius);padding:clamp(22px,3vw,34px);color:var(--soft)}
+.empty b{color:#fff;font-weight:600}
+
+/* role / tools */
+.spec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,44px)}
+@media (max-width:860px){.spec{grid-template-columns:minmax(0,1fr)}}
+.spec h3{font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;padding-top:12px;border-top:2px solid var(--fg);color:var(--soft)}
+.spec ul{list-style:none;margin:0;padding:0}
+.spec li{padding:8px 0;border-bottom:1px solid var(--line);font-size:16px}
+
+/* footer, next link, buttons */
+.foot{border-top:1px solid var(--line);padding:44px 0 60px;color:var(--soft);font-size:14px}
+.foot .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px 48px}
+@media (max-width:760px){.foot .wrap{grid-template-columns:minmax(0,1fr)}}
+.next{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;text-decoration:none;padding-top:clamp(48px,7vw,90px);padding-bottom:clamp(48px,7vw,90px);border-top:1px solid var(--line)}
+.next .h-l{transition:color .2s}
+.next:hover .h-l{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:var(--btn-radius);background:#F2F2F0;color:#0A0A0A;text-decoration:none;font:600 15px/1 var(--sans);border:1px solid #F2F2F0}
+.btn.ghost{background:transparent;color:#F2F2F0;border-color:var(--line2)}
+.btn:hover{background:var(--accent);color:#000;border-color:var(--accent)}
+.arrow{display:inline-block;transition:transform .2s}
+a:hover .arrow{transform:translateX(4px)}
+
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .rise.d1{animation-delay:.06s}.rise.d2{animation-delay:.12s}.rise.d3{animation-delay:.18s}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+}
+@media (max-width:600px){.frame:has(>.tag:not(.r))>.tag.r{top:auto;bottom:8px}}
+
+:root{--display:'Barlow Condensed','Arial Narrow',sans-serif;--sans:'Barlow','Helvetica Neue',Arial,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+--dw:800;--dcase:uppercase;--brand-track:.03em;--accent:#FF2D20;
+--xl:clamp(60px,11.6vw,190px);--xl-lh:.86;--track-xl:-.012em;
+--l:clamp(44px,6.8vw,110px);--l-lh:.9;--track-l:-.006em;--stmt:clamp(44px,7.6vw,128px);
+--m:clamp(30px,3.4vw,50px);--s:clamp(26px,2.4vw,34px);--track-m:0;--num:clamp(64px,7.6vw,116px);
+--name:clamp(88px,16.5vw,250px);--radius:3px;--tag-radius:2px;--btn-radius:2px}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="index.html"><i></i>Justin Leonard</a>
+  <ul><li class="hide-s"><a href="index.html#work">Work</a></li><li class="hide-s"><a href="index.html#approach">Approach</a></li><li><a href="index.html#contact">Contact</a></li></ul>
+</div></nav>
+
+<header class="sec tight" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="mono soft rise">Case study 01 &nbsp;/&nbsp; Trailer wrap &nbsp;/&nbsp; AgRevolution</div>
+    <h1 class="h-xl rise d1" style="margin-top:22px">Generate the direction.<br><em class="a">Rebuild</em> the real thing.</h1>
+    <p class="lede rise d2" style="margin-top:30px;color:#D5D3CC">AgRevolution, an AGCO-owned dealership group, needed a four-sided trailer wrap that carries two brands, Fendt on one side and Massey Ferguson on the other, plus every location it serves. I used image generation to agree a direction with the client in a week. Then I rebuilt it for print: every machine from the client's own photography, every logo from official files, every word in live type. A generated image can sell an idea, but it can't be trusted with the facts.</p>
+    <div class="meta rise d3">
+      <div><span class="mono">Client</span><b>AgRevolution</b></div>
+      <div><span class="mono">My role</span><b>Creative director and designer</b></div>
+      <div><span class="mono">Timeline</span><b>Sep 14 to Oct 29, 2026</b></div>
+      <div><span class="mono">Status</span><b>Final proof, Oct 29, 2026. Not yet printed.</b></div>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:clamp(40px,6vw,72px)">
+    <div class="hero-plate">
+      <figure class="frame crop" style="aspect-ratio:2.157">
+        <img src="assets/trailer-proof-2-fendt.jpg" alt="Final proof of the Fendt side panel: Fendt tractor, IDEAL combine and grain cart in a golden-hour field, red and green bands, AgRevolution logo on the white nose panel" style="width:111.86%;left:-5.93%;top:-45.95%">
+        <span class="tag final r">Final proof &middot; 2026-10-29</span>
+      </figure>
+      <figure class="inset">
+        <div class="frame"><img src="assets/trailer-ai-concept-fendt-side.jpg" alt="AI concept render of the Fendt side of the trailer" loading="lazy" decoding="async"><span class="tag ai">AI concept</span></div>
+        <figcaption><span class="mono">Where it started</span><span>Generated render, Sep 14, 2026. Mood only.</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</header>
+<style>
+.hero-plate{position:relative;padding-bottom:clamp(120px,15vw,210px)}
+.hero-plate .inset{position:absolute;left:clamp(16px,3vw,40px);bottom:0;width:min(38%,460px);background:var(--bg);padding:10px;border-radius:18px;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.hero-plate .inset figcaption{padding:0 4px 2px}
+@media (max-width:760px){.hero-plate{padding-bottom:0}.hero-plate .inset{position:static;width:auto;margin-top:12px;padding:0;box-shadow:none}}
+</style>
+
+<section class="paper sec" id="brief">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">01</span><span class="mono">The brief</span></div>
+      <h2 class="h-l">One trailer, two brands, <em class="a">every location.</em></h2></div>
+    <div class="cols"><div class="spacer"></div><div class="body">
+      <p class="lede">The client's scope set a clear order on every surface. On the Fendt side: Fendt first, then the equipment, then AgRevolution. The Massey Ferguson side follows the same order. The rear leads with AgRevolution, then a map of its locations, then the website and phone number. Each brand side had to show a fleet, not one hero machine.</p>
+      <p class="soft" style="margin-top:20px">The printer asked for a PDF or Illustrator file with half an inch of bleed. That requirement shaped everything: whatever the client approved had to be something I could build as real, editable artwork.</p>
+    </div></div>
+    <ul class="ledger" style="margin-top:48px">
+      <li><span class="k">A</span><div><h3>Two brand sides</h3><p>187.5 &times; 87 in each. Fendt on one side, Massey Ferguson on the other.</p></div></li>
+      <li><span class="k">B</span><div><h3>Rear doors</h3><p>87 &times; 74 in, double doors with a centre seam. Logo, location map, website, phone.</p></div></li>
+      <li><span class="k">C</span><div><h3>Front V-nose</h3><p>Two 53 &times; 64.25 in panels. Logo, website and phone. No equipment.</p></div></li>
+    </ul>
+    <p class="soft" style="font-size:14px;margin-top:14px">Sizes from the client's measured trailer sheet; the printer's own template is still to come.</p>
+  </div>
+</section>
+
+<section class="sec" id="concept">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">02</span><span class="mono">The AI concept stage</span></div>
+      <h2 class="h-l">Six renders to find <em class="a">the feeling.</em></h2></div>
+    <div class="cols"><div class="spacer"></div><div class="body">
+      <p class="lede" style="color:#D5D3CC">Before spending production hours, I generated six concept renders on Sep 14 to show the client what the trailer could feel like on the road. On Sep 21 the client picked Direction A: warm evening light, one continuous field across both sides, red, green and white bands, and AgRevolution's logo on a white forward panel.</p>
+      <p class="soft">The next round of client edits arrived on Sep 28: a sprayer on both sides, a tractor hitched to the baler, the Gold Star logo on the Fendt side and the "Always Running" line on the Massey Ferguson side. Generation got us to that conversation fast.</p>
+    </div></div>
+    <div class="g2 fig">
+      <figure><div class="frame"><img src="assets/trailer-ai-concept-fendt-side.jpg" alt="AI concept, Fendt side" loading="lazy" decoding="async"><span class="tag ai">AI concept</span></div><figcaption><span class="mono">Fendt side</span><span>Direction A reference</span></figcaption></figure>
+      <figure><div class="frame"><img src="assets/trailer-ai-concept-mf-side.jpg" alt="AI concept, Massey Ferguson side" loading="lazy" decoding="async"><span class="tag ai">AI concept</span></div><figcaption><span class="mono">Massey Ferguson side</span><span>Direction A reference</span></figcaption></figure>
+    </div>
+    <div class="g2 fig" style="margin-top:clamp(12px,1.6vw,22px)">
+      <figure><div class="frame"><img src="assets/trailer-ai-concept-round-two.jpg" alt="AI concept, all four sides, round two" loading="lazy" decoding="async"><span class="tag ai">AI concept</span></div><figcaption><span class="mono">All four sides</span><span>Round two overview</span></figcaption></figure>
+      <figure><div class="frame"><img src="assets/trailer-ai-concept-reference-blend.jpg" alt="AI concept, reference blend of all four sides" loading="lazy" decoding="async"><span class="tag ai">AI concept</span></div><figcaption><span class="mono">All four sides</span><span>Reference blend</span></figcaption></figure>
+    </div>
+    <p class="soft" style="font-size:14px;margin-top:22px">All six renders were made on Sep 14, 2026 with AI image generation, and are kept in a folder marked do-not-use for production.</p>
+  </div>
+</section>
+
+<section class="paper sec" id="errors">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">03</span><span class="mono">What the generator got wrong</span></div>
+      <h2 class="h-l">It looked right. <em class="a">It wasn't.</em></h2></div>
+    <div class="errs">
+      <figure>
+        <div class="frame annot"><img src="assets/trailer-ai-concept-rear.jpg" alt="AI concept of the rear doors, with two location errors circled" loading="lazy" decoding="async"><span class="tag ai">AI concept</span>
+          <span class="ring up" style="left:41%;top:45.6%"><b>Mt. Vernon, IL</b></span>
+          <span class="ring" style="left:57.5%;top:56.6%"><b>Columbia, TN</b></span>
+        </div>
+        <figcaption><span class="mono">Rear concept</span><span>Two of its four map pins are wrong.</span></figcaption>
+      </figure>
+      <ul class="ledger">
+        <li><span class="k">01</span><div><h3>A wrong state</h3><p>It printed "Columbia, TN". The real store is in Columbia, Kentucky. AgRevolution has no Tennessee location.</p></div></li>
+        <li><span class="k">02</span><div><h3>A location that doesn't exist</h3><p>It printed "Mt. Vernon, IL", which is not on AgRevolution's store locator or in the project's researched city list.</p></div></li>
+        <li><span class="k">03</span><div><h3>Logos that only look right</h3><p>The Fendt and Massey Ferguson wordmarks are approximations, not the brands' supplied vector marks.</p></div></li>
+        <li><span class="k">04</span><div><h3>Invented machinery</h3><p>Every machine is generated, so none is guaranteed to be a real, accurate model.</p></div></li>
+      </ul>
+    </div>
+    <p class="soft" style="margin-top:22px">Checked against AgRevolution's own contact and dealer-locator pages on Sep 18, 2026. The website and phone number in the renders were correct.</p>
+  </div>
+</section>
+<style>
+.errs{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+@media (max-width:900px){.errs{grid-template-columns:minmax(0,1fr)}}
+.annot{position:relative}
+.ring{position:absolute;width:20%;aspect-ratio:2.2/1;transform:translate(-50%,-50%);border:2.5px solid var(--accent);border-radius:50%;box-shadow:0 0 0 4px rgba(255,45,32,.2)}
+.ring.up b{top:auto;bottom:calc(100% + 6px)}
+.ring b{position:absolute;left:50%;top:calc(100% + 6px);transform:translateX(-50%);white-space:nowrap;font:600 12px/1 var(--mono);letter-spacing:.06em;background:var(--accent);color:#000;padding:5px 7px;border-radius:4px}
+</style>
+
+<section class="sec" id="rule">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">04</span><span class="mono">The rule</span></div><div></div></div>
+    <p class="statement">The concept sets the mood. <em class="a">It is never the source</em> for a logo, a machine or a fact.</p>
+    <blockquote class="quote">"The AI [concepts] are mood and composition references only. They are not a source for logos, machinery, masks, panel geometry, or production copy."<cite>The project's build spec, Sep 2026</cite></blockquote>
+  </div>
+</section>
+
+<section class="paper sec" id="rebuild">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">05</span><span class="mono">The rebuild</span></div>
+      <h2 class="h-l">Same idea, <em class="a">real parts.</em></h2></div>
+    <div class="cols"><div class="spacer"></div><div class="body">
+      <p class="lede">I rebuilt each panel to match the approved concept at the same scale, from sources a printer can trust.</p>
+    </div></div>
+    <div class="spec" style="margin-top:36px">
+      <div><h3>Photography</h3><ul><li>Official AGCO photography supplied by the client</li><li>Most files 5,000 to 7,000 px wide</li><li>Licensed stock photography for sky and dust</li></ul></div>
+      <div><h3>Brand marks and type</h3><ul><li>Official vector logos for Fendt, Massey Ferguson and AgRevolution</li><li>Live Montserrat Bold for the web address and phone</li></ul></div>
+      <div><h3>Geometry</h3><ul><li>The client's measured trailer sheet</li><li>Half-inch bleed, per the printer</li></ul></div>
+    </div>
+
+    <figure class="fig">
+      <div class="frame bordered"><img src="assets/trailer-rear-concept-vs-rebuild.jpg" alt="Side by side at the same scale: the AI concept of the rear doors on the left and the rebuilt rear on the right with thirteen correct locations" loading="lazy" decoding="async"><span class="tag ai">AI concept</span><span class="tag final r">Rebuild</span></div>
+      <figcaption><span class="mono">Rear doors, same scale</span><span>Left: the generated concept, four pins, two of them wrong. Right: the rebuild, with all 13 locations the client listed, including the new Lexington, Kentucky site.</span></figcaption>
+    </figure>
+    <figure class="fig">
+      <div class="frame bordered"><img src="assets/trailer-front-concept-vs-rebuild.jpg" alt="Side by side: the AI concept of the front V-nose on the left and the rebuilt vector front on the right" loading="lazy" decoding="async"><span class="tag ai">AI concept</span><span class="tag final r">Rebuild</span></div>
+      <figcaption><span class="mono">Front V-nose, same width</span><span>The rebuild keeps the concept's steep red and green chevrons, built as vectors with the official logo and live type, and no raster in the art.</span></figcaption>
+    </figure>
+
+    <div class="hard">
+      <div>
+        <div class="mono soft">The hard part</div>
+        <h3 class="h-m" style="margin-top:14px">The concept had more impact than the first honest build.</h3>
+        <blockquote class="quote">"The [real-asset build] doesn't wow me like the concept does."<cite>My note on the first real-asset build, Oct 27, 2026</cite></blockquote>
+      </div>
+      <div>
+        <p>A generated image sets a high bar for drama because it has no rules to follow. Rather than settle, I held the real build to the concept's impact and told the build exactly what to change:</p>
+        <ul class="ledger">
+          <li><span class="k">1</span><div><h3>Scale</h3><p>The hero tractor became the largest machine, low and forward, like the concept.</p></div></li>
+          <li><span class="k">2</span><div><h3>One light</h3><p>Every machine graded to the same warm, backlit sky, so the side reads as one photograph.</p></div></li>
+          <li><span class="k">3</span><div><h3>Ground contact</h3><p>Contact shadows, stubble over the tyres and dust behind the hero, so nothing floats.</p></div></li>
+          <li><span class="k">4</span><div><h3>Depth</h3><p>Background machines softened with haze and grouped toward the horizon.</p></div></li>
+        </ul>
+        <p class="soft" style="margin-top:18px">I hand-finished both side panels myself in Photoshop.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.hard{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);margin-top:clamp(64px,9vw,120px);padding-top:clamp(36px,5vw,56px);border-top:1px solid var(--fg)}
+@media (max-width:900px){.hard{grid-template-columns:minmax(0,1fr)}}
+</style>
+
+<section class="sec" id="final">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">06</span><span class="mono">Final versions</span></div>
+      <h2 class="h-l">The final proof, <em class="a">Oct 29.</em></h2></div>
+    <figure class="fig">
+      <div class="frame crop" style="aspect-ratio:2.157"><img src="assets/trailer-proof-2-fendt.jpg" alt="Final proof, Fendt side" style="width:111.86%;left:-5.93%;top:-45.95%" loading="lazy" decoding="async"><span class="tag final">Final proof &middot; 2026-10-29</span></div>
+      <figcaption><span class="mono">Fendt side</span><span>187.5 &times; 87 in. Gold Star logo bottom left.</span></figcaption>
+    </figure>
+    <figure class="fig">
+      <div class="frame crop" style="aspect-ratio:2.157"><img src="assets/trailer-proof-3-massey-ferguson.jpg" alt="Final proof, Massey Ferguson side" style="width:111.86%;left:-5.93%;top:-45.95%" loading="lazy" decoding="async"><span class="tag final">Final proof &middot; 2026-10-29</span></div>
+      <figcaption><span class="mono">Massey Ferguson side</span><span>187.5 &times; 87 in. "Always Running" bottom right.</span></figcaption>
+    </figure>
+    <div class="g2 fig">
+      <figure><div class="frame crop" style="aspect-ratio:1.1736"><img src="assets/trailer-proof-4-rear-a.jpg" alt="Final proof, rear doors, option A grey map" style="width:151.06%;left:-25.53%;top:-20.55%" loading="lazy" decoding="async"><span class="tag final">Final proof &middot; 2026-10-29</span></div><figcaption><span class="mono">Rear, option A</span><span>Grey map, as in the concept.</span></figcaption></figure>
+      <figure><div class="frame crop" style="aspect-ratio:1.1736"><img src="assets/trailer-proof-5-rear-b.jpg" alt="Final proof, rear doors, option B green map" style="width:151.06%;left:-25.53%;top:-20.55%" loading="lazy" decoding="async"><span class="tag final">Final proof &middot; 2026-10-29</span></div><figcaption><span class="mono">Rear, option B</span><span>Green map.</span></figcaption></figure>
+    </div>
+    <figure class="fig front-fig">
+      <div class="frame crop" style="aspect-ratio:1.6467"><img src="assets/trailer-proof-6-front.jpg" alt="Final proof, front V-nose" style="width:112.11%;left:-6.05%;top:-23.54%" loading="lazy" decoding="async"><span class="tag final">Final proof &middot; 2026-10-29</span></div>
+      <figcaption><span class="mono">Front V-nose</span><span>Two 53 &times; 64.25 in panels, shown flat side by side.</span></figcaption>
+    </figure>
+
+    <div class="sheets">
+      <div class="mono soft" style="margin-bottom:16px">The full proof set, version 4, six pages</div>
+      <div class="g3 keep2">
+        <a class="sheet" href="assets/trailer-proof-1-cover.jpg"><img src="assets/trailer-proof-1-cover.jpg" alt="Proof page 1, cover" loading="lazy" decoding="async"><span class="mono">01 Cover</span></a>
+        <a class="sheet" href="assets/trailer-proof-2-fendt.jpg"><img src="assets/trailer-proof-2-fendt.jpg" alt="Proof page 2, Fendt side" loading="lazy" decoding="async"><span class="mono">02 Fendt</span></a>
+        <a class="sheet" href="assets/trailer-proof-3-massey-ferguson.jpg"><img src="assets/trailer-proof-3-massey-ferguson.jpg" alt="Proof page 3, Massey Ferguson side" loading="lazy" decoding="async"><span class="mono">03 Massey Ferguson</span></a>
+        <a class="sheet" href="assets/trailer-proof-4-rear-a.jpg"><img src="assets/trailer-proof-4-rear-a.jpg" alt="Proof page 4, rear option A" loading="lazy" decoding="async"><span class="mono">04 Rear A</span></a>
+        <a class="sheet" href="assets/trailer-proof-5-rear-b.jpg"><img src="assets/trailer-proof-5-rear-b.jpg" alt="Proof page 5, rear option B" loading="lazy" decoding="async"><span class="mono">05 Rear B</span></a>
+        <a class="sheet" href="assets/trailer-proof-6-front.jpg"><img src="assets/trailer-proof-6-front.jpg" alt="Proof page 6, front V-nose" loading="lazy" decoding="async"><span class="mono">06 Front</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+.front-fig{max-width:980px;margin-left:auto;margin-right:auto}
+.sheets{margin-top:clamp(56px,8vw,100px);padding-top:28px;border-top:1px solid var(--line)}
+.sheet{display:block;text-decoration:none;color:var(--soft)}
+.sheet img{width:100%;border-radius:8px;box-shadow:0 18px 40px rgba(0,0,0,.4);transition:transform .25s}
+.sheet:hover img{transform:translateY(-4px)}
+.sheet .mono{display:block;margin-top:10px}
+</style>
+
+<section class="paper sec" id="role">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">07</span><span class="mono">Role, tools, what changed</span></div>
+      <h2 class="h-l">What the process <em class="a">bought.</em></h2></div>
+    <div class="nums">
+      <div class="num"><div class="v">7 <small>days</small></div><p>From the first generated renders (Sep 14) to the client's chosen direction (Sep 21), before any production hours.</p></div>
+      <div class="num"><div class="v">4</div><p>Generator errors caught before anything went near a printer: a wrong state, an invented location, fake logos, invented machinery.</p></div>
+      <div class="num"><div class="v">13</div><p>Correct locations on the rebuilt rear map, against the concept's four.</p></div>
+      <div class="num"><div class="v">6</div><p>Pages in the version 4 proof set: a cover, both sides, two rear options and the front.</p></div>
+    </div>
+    <div class="spec" style="margin-top:clamp(56px,8vw,96px)">
+      <div><h3>My role</h3><ul><li>Creative direction from brief to proof</li><li>Concept round with image generation</li><li>Art direction of the rebuild</li><li>Hand finish of both side panels</li><li>Client rounds and proofing</li></ul></div>
+      <div><h3>Tools</h3><ul><li>AI image generation for the concept round</li><li>Adobe Photoshop</li><li>Adobe Illustrator, with scripted rebuilds</li><li>An AI proof reviewer that checks every build at full size before I see it</li></ul></div>
+      <div><h3>Where it stands</h3><ul><li>Version 4 proof set, Oct 29, 2026</li><li>Client's round-two notes received Oct 30</li><li>Printer template and print release still to come</li></ul></div>
+    </div>
+    <div class="empty" style="margin-top:clamp(40px,6vw,64px)"><b>Not shown yet: the wrap on the trailer.</b> Nothing has been printed. This slot stays empty until it is, and then it gets a photo of the real thing.</div>
+  </div>
+</section>
+
+<a class="wrap next" href="website-concept.html">
+  <div><div class="mono soft">Next case study</div><div class="h-l" style="margin-top:12px">Dealer website concept</div></div>
+  <span class="btn ghost">Read it <span class="arrow">&rarr;</span></span>
+</a>
+
+<footer class="foot"><div class="wrap">
+  <div><a class="brand" href="index.html"><i></i>Justin Leonard</a><p style="margin-top:12px">justin@just-leonard.com</p></div>
+  <p>Client work for AgRevolution. Photography: AGCO brand photography supplied by the client, plus licensed stock. Fendt and Massey Ferguson are brands of AGCO Corporation. Concept renders are labelled as AI concepts wherever they appear.</p>
+</div></footer>
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Horror Game Case Study, Justin Leonard</title>
+<meta name="description" content="An original horror game in preproduction, built in Unreal Engine 5 with AI agents under one rule: every frame is labelled for what it is.">
+<meta name="author" content="Justin Leonard">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Justin Leonard">
+<meta property="og:title" content="Horror Game Case Study, Justin Leonard">
+<meta property="og:description" content="An original horror game in preproduction, built in Unreal Engine 5 with AI agents under one rule: every frame is labelled for what it is.">
+<meta property="og:image" content="https://vyztra.github.io/portfolio/assets/og-horror-concept.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://vyztra.github.io/portfolio/horror-concept.html">
+<link rel="canonical" href="https://vyztra.github.io/portfolio/horror-concept.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Horror Game Case Study, Justin Leonard">
+<meta name="twitter:description" content="An original horror game in preproduction, built in Unreal Engine 5 with AI agents under one rule: every frame is labelled for what it is.">
+<meta name="twitter:image" content="https://vyztra.github.io/portfolio/assets/og-horror-concept.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Shared system. Theme-specific values (fonts, display weight, case, accent, sizes) come from the
+   theme block build.py appends after this file. Everything here reads those variables. */
+:root{
+  --bg:#0A0A0A;--bg2:#121212;--bg3:#1A1A1A;
+  --fg:#F2F2F0;--soft:#A3A3A3;--dim:#8C8C8C;
+  --line:#262626;--line2:#3A3A3A;
+  --gut:clamp(16px,4.2vw,56px);
+  --max:1320px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.mono{font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+em.a,.a{font-style:normal;color:var(--dim)}
+.soft{color:var(--soft)}
+.paper{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(10,10,10,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{display:inline-flex;align-items:center;gap:10px;font:var(--dw) 22px/1 var(--display);text-transform:var(--dcase);letter-spacing:var(--brand-track);text-decoration:none;white-space:nowrap}
+.brand i{display:inline-block;width:10px;height:10px;background:var(--accent)}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:var(--soft);font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.nav ul a:hover{color:#fff}
+@media (max-width:760px){.nav ul li.hide-s{display:none}.nav ul{gap:16px}}
+
+/* type scale: display font, weight, case and tracking come from the theme */
+.h-xl,.h-l,.h-m,.h-s,.statement{font-family:var(--display);font-weight:var(--dw);margin:0}
+.h-xl{font-size:var(--xl);line-height:var(--xl-lh);letter-spacing:var(--track-xl);text-transform:var(--dcase)}
+.h-l{font-size:var(--l);line-height:var(--l-lh);letter-spacing:var(--track-l);text-transform:var(--dcase)}
+.statement{font-size:var(--stmt);line-height:var(--l-lh);letter-spacing:var(--track-l);text-transform:var(--dcase);max-width:1200px}
+.h-m{font-size:var(--m);line-height:1.04;letter-spacing:var(--track-m)}
+.h-s{font-size:var(--s);line-height:1.1;letter-spacing:var(--track-m)}
+.lede{font:400 clamp(19px,1.9vw,24px)/1.5 var(--sans);letter-spacing:-.005em;max-width:820px}
+p{margin:0 0 16px}
+
+/* section scaffolding */
+.sec{padding:clamp(80px,11vw,150px) 0}
+.sec.tight{padding-top:clamp(40px,6vw,80px)}
+.sec-head{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:20px 40px;align-items:start;margin-bottom:clamp(36px,5vw,64px)}
+.sec-head .idx{display:flex;flex-direction:column;gap:8px;padding-top:12px;border-top:2px solid var(--accent)}
+.sec-head .idx .n{font:var(--dw) 40px/1 var(--display);color:var(--fg)}
+.sec-head .idx .mono{color:var(--soft)}
+@media (max-width:860px){.sec-head{grid-template-columns:1fr}.sec-head .idx{flex-direction:row;align-items:baseline;gap:14px}}
+.cols{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:0 40px}
+.cols>.body{max-width:720px}
+@media (max-width:860px){.cols{grid-template-columns:1fr}.cols>.spacer{display:none}}
+
+/* figures */
+figure{margin:0}
+.fig{margin-top:clamp(28px,4vw,48px)}
+.frame{position:relative;border-radius:var(--radius);overflow:hidden;background:#1B1B1B}
+.frame.bordered{border:1px solid var(--line)}
+.frame img,.frame video{width:100%;height:auto}
+figcaption{display:flex;gap:8px 16px;flex-wrap:wrap;align-items:baseline;margin-top:12px;font-size:14px;line-height:1.5;color:var(--soft)}
+figcaption .mono{color:var(--fg);flex:none}
+.tag{position:absolute;top:12px;left:12px;z-index:2;font:600 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border-radius:var(--tag-radius);background:rgba(10,10,10,.85);color:#fff;border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px)}
+.tag.ai{background:var(--accent);border-color:var(--accent);color:#000}
+.tag.final{background:#F2F2F0;color:#0A0A0A;border-color:#F2F2F0}
+.tag.r{left:auto;right:12px}
+@media (max-width:600px){.tag{top:8px;left:8px;padding:5px 7px;letter-spacing:.05em}.tag.r{right:8px}}
+/* crop: show one region of a larger source image without editing the file */
+.crop{position:relative;overflow:hidden}
+.crop>img{position:absolute;max-width:none;height:auto}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,22px)}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,22px)}
+@media (max-width:760px){.g2,.g3{grid-template-columns:minmax(0,1fr)}}
+.g3.keep2{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:760px){.g3.keep2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* meta row */
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;border-top:1px solid var(--line);padding-top:20px;margin-top:clamp(40px,6vw,72px)}
+.meta b{display:block;font:500 16px/1.4 var(--sans);margin-top:8px;color:#fff}
+.meta .mono{color:var(--soft)}
+@media (max-width:860px){.meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ledger lists */
+.ledger{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.ledger li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.ledger .k{font:var(--dw) 28px/1 var(--display);color:var(--accent)}
+.ledger h3{font:600 18px/1.35 var(--sans);margin:0 0 4px;color:#fff}
+.ledger p{margin:0;color:var(--soft)}
+
+/* quote */
+.quote{border-left:3px solid var(--accent);padding:4px 0 4px 22px;margin:28px 0 0;font:500 clamp(20px,2vw,26px)/1.4 var(--sans);max-width:760px;color:#fff}
+.quote cite{display:block;margin-top:10px;font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;font-style:normal;color:var(--soft)}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+@media (max-width:860px){.nums{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.num{border-top:2px solid var(--fg);padding-top:14px}
+.num .v{font-family:var(--display);font-weight:var(--dw);font-size:var(--num);line-height:.9;letter-spacing:var(--track-l);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.num .v small{font:500 13px/1 var(--mono);letter-spacing:.08em;color:var(--soft)}
+.num .v .to{color:var(--accent)}
+.num p{font-size:15px;margin:10px 0 0;color:var(--soft)}
+
+/* empty room */
+.empty{border:1.5px dashed var(--line2);border-radius:var(--radius);padding:clamp(22px,3vw,34px);color:var(--soft)}
+.empty b{color:#fff;font-weight:600}
+
+/* role / tools */
+.spec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,44px)}
+@media (max-width:860px){.spec{grid-template-columns:minmax(0,1fr)}}
+.spec h3{font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;padding-top:12px;border-top:2px solid var(--fg);color:var(--soft)}
+.spec ul{list-style:none;margin:0;padding:0}
+.spec li{padding:8px 0;border-bottom:1px solid var(--line);font-size:16px}
+
+/* footer, next link, buttons */
+.foot{border-top:1px solid var(--line);padding:44px 0 60px;color:var(--soft);font-size:14px}
+.foot .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px 48px}
+@media (max-width:760px){.foot .wrap{grid-template-columns:minmax(0,1fr)}}
+.next{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;text-decoration:none;padding-top:clamp(48px,7vw,90px);padding-bottom:clamp(48px,7vw,90px);border-top:1px solid var(--line)}
+.next .h-l{transition:color .2s}
+.next:hover .h-l{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:var(--btn-radius);background:#F2F2F0;color:#0A0A0A;text-decoration:none;font:600 15px/1 var(--sans);border:1px solid #F2F2F0}
+.btn.ghost{background:transparent;color:#F2F2F0;border-color:var(--line2)}
+.btn:hover{background:var(--accent);color:#000;border-color:var(--accent)}
+.arrow{display:inline-block;transition:transform .2s}
+a:hover .arrow{transform:translateX(4px)}
+
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .rise.d1{animation-delay:.06s}.rise.d2{animation-delay:.12s}.rise.d3{animation-delay:.18s}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+}
+@media (max-width:600px){.frame:has(>.tag:not(.r))>.tag.r{top:auto;bottom:8px}}
+
+:root{--display:'Barlow Condensed','Arial Narrow',sans-serif;--sans:'Barlow','Helvetica Neue',Arial,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+--dw:800;--dcase:uppercase;--brand-track:.03em;--accent:#FF2D20;
+--xl:clamp(60px,11.6vw,190px);--xl-lh:.86;--track-xl:-.012em;
+--l:clamp(44px,6.8vw,110px);--l-lh:.9;--track-l:-.006em;--stmt:clamp(44px,7.6vw,128px);
+--m:clamp(30px,3.4vw,50px);--s:clamp(26px,2.4vw,34px);--track-m:0;--num:clamp(64px,7.6vw,116px);
+--name:clamp(88px,16.5vw,250px);--radius:3px;--tag-radius:2px;--btn-radius:2px}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="index.html"><i></i>Justin Leonard</a>
+  <ul><li class="hide-s"><a href="index.html#work">Work</a></li><li class="hide-s"><a href="index.html#approach">Approach</a></li><li><a href="index.html#contact">Contact</a></li></ul>
+</div></nav>
+
+<header class="sec tight" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="mono soft rise">Case study 03 &nbsp;/&nbsp; Horror game &nbsp;/&nbsp; In preproduction</div>
+    <h1 class="h-xl rise d1" style="margin-top:22px">Every frame labelled<br><em class="a">for what it is.</em></h1>
+    <p class="lede rise d2" style="margin-top:30px;color:#D4D4D2">This is my own horror action RPG, in preproduction. I'm building it with a team of AI agents under my direction, on one hard rule: a concept is never passed off as a render, and a render is never passed off as the game.</p>
+    <div class="meta rise d3">
+      <div><span class="mono">Project</span><b>Original horror game</b></div>
+      <div><span class="mono">My role</span><b>Creator. The design and story calls are mine.</b></div>
+      <div><span class="mono">Engine</span><b>Unreal Engine 5.8 and Blender 5.3</b></div>
+      <div><span class="mono">Status</span><b>Preproduction. Not a playable game yet.</b></div>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:clamp(40px,6vw,72px)">
+    <figure>
+      <div class="frame"><video muted loop playsinline autoplay preload="metadata" poster="assets/horror-gameplay-capture-poster.jpg" aria-label="Gameplay capture: a stand-in player walks up a dark stone hall, fights an enemy under a surgical lamp, then walks through a doorway into a tiled side room"><source src="assets/horror-gameplay-capture.mp4" type="video/mp4"></video><span class="tag final">Gameplay capture &middot; scripted, nobody playing</span></div>
+      <figcaption><span class="mono">Gameplay capture, Nov 11, 2026</span><span>27 seconds from the running game in Unreal Engine 5.8.4, every frame the engine wrote. A script drives the player through the template's own controls; the enemy runs its own AI. No sound yet.</span></figcaption>
+    </figure>
+  </div>
+</header>
+
+<section class="sec paper" id="approach">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">01</span><span class="mono">The approach</span></div>
+      <h2 class="h-l">AI as the crew. <em class="a">Proof at every gate.</em></h2></div>
+    <div class="cols"><div class="spacer"></div><div class="body">
+      <p class="lede">One agent builds; a separate one attacks the result before it counts as done. Status words have fixed meanings, and every image carries one of five labels: concept, prototype, editor capture, gameplay capture or final build capture.</p>
+    </div></div>
+    <div class="nums" style="margin-top:clamp(40px,6vw,64px)">
+      <div class="num"><div class="v">18 <small>of 18</small></div><p>Modular environment pieces that pass the kit validator, with three planted faults that fail as intended.</p></div>
+      <div class="num"><div class="v">183 <small>of 183</small></div><p>Tests passing on the game's rules library. Proven outside the engine only.</p></div>
+      <div class="num"><div class="v">27</div><p>Defects found by the red-team review: 1 critical, 12 major, 14 minor.</p></div>
+      <div class="num"><div class="v">30</div><p>Original texture maps, made by script. Nothing downloaded, nothing licensed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="concept">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">02</span><span class="mono">Concept to engine</span></div>
+      <h2 class="h-l">The concept set the mood. <em class="a">The build earned it.</em></h2></div>
+    <figure class="fig">
+      <div class="frame"><img src="assets/horror-kickoff-concept.jpg" alt="Generated concept art: a rain-soaked face in close-up, a lone figure facing a gothic cathedral under a red sky, a dripping shadow creature"><span class="tag ai">Kickoff concept &middot; not in engine</span></div>
+      <figcaption><span class="mono">Kickoff concept art</span><span>AI-generated before production began. Used once, for palette and tone.</span></figcaption>
+    </figure>
+    <div class="cols" style="margin-top:clamp(32px,4vw,48px)"><div class="spacer"></div><div class="body">
+      <p class="lede">The build took three things from the concept: a near-black, blue-green base; restraint; and red as the one loud colour. It took no building, creature, face or layout. Everything below was made for the game.</p>
+    </div></div>
+    <figure class="fig">
+      <div class="frame"><img src="assets/horror-hall-in-engine.jpg" alt="Dark stone hall with two arcades, a hanging lamp cluster and a red stained-glass window behind an operating table" loading="lazy" decoding="async"><span class="tag final">Gameplay capture &middot; 2026-11-11</span></div>
+      <figcaption><span class="mono">The hall, in engine</span><span>A chapel fused with an operating theatre. Red spill from the one window, everything else held cold.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec paper" id="kit">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">03</span><span class="mono">The kit</span></div>
+      <h2 class="h-l">Built in Blender. <em class="a">Labelled as Blender.</em></h2></div>
+    <figure class="fig">
+      <div class="frame bordered"><img src="assets/horror-kit-contact-sheet.jpg" alt="Contact sheet of 18 modular pieces: floor, walls, a stained-glass window, arches, a vaulted ceiling, stairs, an operating table, an altar, lamps, a tray cart and a pew" loading="lazy" decoding="async"><span class="tag r">Blender preview, not in engine</span></div>
+      <figcaption><span class="mono">Environment kit v0.1</span><span>18 modular pieces with levels of detail and collision, built by script so it can be rebuilt and re-validated in one command.</span></figcaption>
+    </figure>
+    <div class="g2 fig">
+      <figure><div class="frame"><img src="assets/horror-altar-blender.jpg" alt="Blender preview of the operating altar view" loading="lazy" decoding="async"><span class="tag">Blender preview</span></div><figcaption><span class="mono">Same camera, Blender</span><span>The planned shot, rendered in Blender.</span></figcaption></figure>
+      <figure><div class="frame"><img src="assets/horror-altar-in-engine.jpg" alt="Unreal Engine capture of the same operating altar view" loading="lazy" decoding="async"><span class="tag final">Gameplay capture &middot; 2026-11-11</span></div><figcaption><span class="mono">Same camera, Unreal</span><span>The same camera converted into the engine and captured from the running game.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="review">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">04</span><span class="mono">Direction and revision</span></div>
+      <h2 class="h-l">Right idea. <em class="a">Needs changes.</em></h2></div>
+    <div class="cols"><div class="spacer"></div><div class="body">
+      <p class="lede">My review note on the first captures kept the chapel and operating-theatre fusion and the restrained red, and asked for four things before art quality could be signed off: tactile surfaces, original creatures, clearer paths through the space, and a moving gameplay review. Round two answered three of the four the same morning. Creatures are still open.</p>
+    </div></div>
+    <figure class="fig">
+      <div class="frame"><img src="assets/horror-hall-before-after.jpg" alt="The same camera before and after: flat procedural surfaces on the left, textured stone, tile and wood with stronger window light on the right" loading="lazy" decoding="async"><span class="tag final">Gameplay captures &middot; same camera</span></div>
+      <figcaption><span class="mono">Before and after, one camera</span><span>Surfaces rebuilt around 30 original texture maps; lighting and set dressing reworked; no new geometry.</span></figcaption>
+    </figure>
+    <div class="g2 fig">
+      <figure><div class="frame"><img src="assets/horror-closeup-steel-glass.jpg" alt="Close-up of a steel operating table under a teal and amber stained-glass window, white tile on the left wall" loading="lazy" decoding="async"><span class="tag final">Gameplay capture</span></div><figcaption><span class="mono">Surface close-up</span><span>Steel, glass and tile, 1.85 m from the window.</span></figcaption></figure>
+      <figure><div class="frame"><img src="assets/horror-doorway-branch.jpg" alt="A steel doorway opening onto a lit side room with white tile and a second table" loading="lazy" decoding="async"><span class="tag final">Gameplay capture</span></div><figcaption><span class="mono">The way forward</span><span>The side room lit as the obvious next step, seen from the dark.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec paper" id="shift">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">05</span><span class="mono">The core mechanic</span></div>
+      <h2 class="h-l">The room changes. <em class="a">You don't get a say.</em></h2></div>
+    <div class="cols"><div class="spacer"></div><div class="body">
+      <p class="lede">The game is built on a world with two layers. This is the first working shift, in the running game: the doorway the player stands in becomes a wall, the player is moved clear of it, and a closed wall opens onto a new room. Then it shifts back.</p>
+    </div></div>
+    <figure class="fig">
+      <div class="frame"><video muted loop playsinline autoplay preload="metadata" poster="assets/horror-reality-shift-poster.jpg" aria-label="Gameplay capture from a fixed camera: lights flicker, a cold flash, a doorway becomes a wall and the opposite wall opens onto an amber-lit room, then it reverses"><source src="assets/horror-reality-shift.mp4" type="video/mp4"></video><span class="tag final">Gameplay capture &middot; scripted trigger</span></div>
+      <figcaption><span class="mono">Reality shift, Nov 11, 2026</span><span>16 seconds, fixed camera, triggered by script. The flicker and flash are a placeholder cue so the phases can be seen, not the designed effect.</span></figcaption>
+    </figure>
+    <figure class="fig">
+      <div class="frame"><img src="assets/horror-reality-shift-before-after.jpg" alt="The same fixed camera before and after the shift: an open doorway with the player in it, then a block wall where the doorway was and an opening onto an amber room" loading="lazy" decoding="async"><span class="tag final">Gameplay captures &middot; same camera</span></div>
+      <figcaption><span class="mono">Layer one, layer two</span><span>Same room, same camera, a few seconds apart.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" id="honest">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">06</span><span class="mono">What's placeholder</span></div>
+      <h2 class="h-l">What's real, <em class="a">and what isn't yet.</em></h2></div>
+    <ul class="ledger">
+      <li><span class="k">01</span><div><h3>Characters</h3><p>The player and enemy are the engine's template mannequins. No original creatures yet.</p></div></li>
+      <li><span class="k">02</span><div><h3>The shift effect</h3><p>The mechanic works; the look of it is a placeholder cue.</p></div></li>
+      <li><span class="k">03</span><div><h3>Sound</h3><p>None yet. Every clip here is silent.</p></div></li>
+      <li><span class="k">04</span><div><h3>World</h3><p>No sky or exterior yet, and nothing has been packaged as a playable build.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<a class="wrap next" href="index.html">
+  <div><div class="mono soft">Back to</div><div class="h-l" style="margin-top:12px">The portfolio</div></div>
+  <span class="btn ghost">Home <span class="arrow">&rarr;</span></span>
+</a>
+
+<footer class="foot"><div class="wrap">
+  <div><a class="brand" href="index.html"><i></i>Justin Leonard</a><p style="margin-top:12px">justin@just-leonard.com</p></div>
+  <p>Original game in preproduction. Story and names are not final. Captures are from Unreal Engine 5.8.4 on a MacBook Pro M1 Max; the template characters belong to Epic Games' engine samples.</p>
+</div></footer>
+</body>
+
+</html>
