@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOXIE Game UX Case Study, Justin Leonard</title>
+<meta name="description" content="A game jam entry whose first minute was rewritten by three playtests.">
+<meta name="author" content="Justin Leonard">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Justin Leonard">
+<meta property="og:title" content="NOXIE Game UX Case Study, Justin Leonard">
+<meta property="og:description" content="A game jam entry whose first minute was rewritten by three playtests.">
+<meta property="og:image" content="https://vyztra.github.io/portfolio/assets/og-noxie.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://vyztra.github.io/portfolio/noxie.html">
+<link rel="canonical" href="https://vyztra.github.io/portfolio/noxie.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NOXIE Game UX Case Study, Justin Leonard">
+<meta name="twitter:description" content="A game jam entry whose first minute was rewritten by three playtests.">
+<meta name="twitter:image" content="https://vyztra.github.io/portfolio/assets/og-noxie.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Shared system. Theme-specific values (fonts, display weight, case, accent, sizes) come from the
+   theme block build.py appends after this file. Everything here reads those variables. */
+:root{
+  --bg:#0A0A0A;--bg2:#121212;--bg3:#1A1A1A;
+  --fg:#F2F2F0;--soft:#A3A3A3;--dim:#8C8C8C;
+  --line:#262626;--line2:#3A3A3A;
+  --gut:clamp(16px,4.2vw,56px);
+  --max:1320px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.mono{font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+em.a,.a{font-style:normal;color:var(--dim)}
+.soft{color:var(--soft)}
+.paper{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(10,10,10,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{display:inline-flex;align-items:center;gap:10px;font:var(--dw) 22px/1 var(--display);text-transform:var(--dcase);letter-spacing:var(--brand-track);text-decoration:none;white-space:nowrap}
+.brand i{display:inline-block;width:10px;height:10px;background:var(--accent)}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:var(--soft);font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.nav ul a:hover{color:#fff}
+@media (max-width:760px){.nav ul li.hide-s{display:none}.nav ul{gap:16px}}
+
+/* type scale: display font, weight, case and tracking come from the theme */
+.h-xl,.h-l,.h-m,.h-s,.statement{font-family:var(--display);font-weight:var(--dw);margin:0}
+.h-xl{font-size:var(--xl);line-height:var(--xl-lh);letter-spacing:var(--track-xl);text-transform:var(--dcase)}
+.h-l{font-size:var(--l);line-height:var(--l-lh);letter-spacing:var(--track-l);text-transform:var(--dcase)}
+.statement{font-size:var(--stmt);line-height:var(--l-lh);letter-spacing:var(--track-l);text-transform:var(--dcase);max-width:1200px}
+.h-m{font-size:var(--m);line-height:1.04;letter-spacing:var(--track-m)}
+.h-s{font-size:var(--s);line-height:1.1;letter-spacing:var(--track-m)}
+.lede{font:400 clamp(19px,1.9vw,24px)/1.5 var(--sans);letter-spacing:-.005em;max-width:820px}
+p{margin:0 0 16px}
+
+/* section scaffolding */
+.sec{padding:clamp(80px,11vw,150px) 0}
+.sec.tight{padding-top:clamp(40px,6vw,80px)}
+.sec-head{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:20px 40px;align-items:start;margin-bottom:clamp(36px,5vw,64px)}
+.sec-head .idx{display:flex;flex-direction:column;gap:8px;padding-top:12px;border-top:2px solid var(--accent)}
+.sec-head .idx .n{font:var(--dw) 40px/1 var(--display);color:var(--fg)}
+.sec-head .idx .mono{color:var(--soft)}
+@media (max-width:860px){.sec-head{grid-template-columns:1fr}.sec-head .idx{flex-direction:row;align-items:baseline;gap:14px}}
+.cols{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:0 40px}
+.cols>.body{max-width:720px}
+@media (max-width:860px){.cols{grid-template-columns:1fr}.cols>.spacer{display:none}}
+
+/* figures */
+figure{margin:0}
+.fig{margin-top:clamp(28px,4vw,48px)}
+.frame{position:relative;border-radius:var(--radius);overflow:hidden;background:#1B1B1B}
+.frame.bordered{border:1px solid var(--line)}
+.frame img,.frame video{width:100%;height:auto}
+figcaption{display:flex;gap:8px 16px;flex-wrap:wrap;align-items:baseline;margin-top:12px;font-size:14px;line-height:1.5;color:var(--soft)}
+figcaption .mono{color:var(--fg);flex:none}
+.tag{position:absolute;top:12px;left:12px;z-index:2;font:600 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border-radius:var(--tag-radius);background:rgba(10,10,10,.85);color:#fff;border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px)}
+.tag.ai{background:var(--accent);border-color:var(--accent);color:#000}
+.tag.final{background:#F2F2F0;color:#0A0A0A;border-color:#F2F2F0}
+.tag.r{left:auto;right:12px}
+@media (max-width:600px){.tag{top:8px;left:8px;padding:5px 7px;letter-spacing:.05em}.tag.r{right:8px}}
+/* crop: show one region of a larger source image without editing the file */
+.crop{position:relative;overflow:hidden}
+.crop>img{position:absolute;max-width:none;height:auto}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,22px)}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,22px)}
+@media (max-width:760px){.g2,.g3{grid-template-columns:minmax(0,1fr)}}
+.g3.keep2{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:760px){.g3.keep2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* meta row */
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;border-top:1px solid var(--line);padding-top:20px;margin-top:clamp(40px,6vw,72px)}
+.meta b{display:block;font:500 16px/1.4 var(--sans);margin-top:8px;color:#fff}
+.meta .mono{color:var(--soft)}
+@media (max-width:860px){.meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ledger lists */
+.ledger{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.ledger li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.ledger .k{font:var(--dw) 28px/1 var(--display);color:var(--accent)}
+.ledger h3{font:600 18px/1.35 var(--sans);margin:0 0 4px;color:#fff}
+.ledger p{margin:0;color:var(--soft)}
+
+/* quote */
+.quote{border-left:3px solid var(--accent);padding:4px 0 4px 22px;margin:28px 0 0;font:500 clamp(20px,2vw,26px)/1.4 var(--sans);max-width:760px;color:#fff}
+.quote cite{display:block;margin-top:10px;font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;font-style:normal;color:var(--soft)}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+@media (max-width:860px){.nums{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.num{border-top:2px solid var(--fg);padding-top:14px}
+.num .v{font-family:var(--display);font-weight:var(--dw);font-size:var(--num);line-height:.9;letter-spacing:var(--track-l);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.num .v small{font:500 13px/1 var(--mono);letter-spacing:.08em;color:var(--soft)}
+.num .v .to{color:var(--accent)}
+.num p{font-size:15px;margin:10px 0 0;color:var(--soft)}
+
+/* empty room */
+.empty{border:1.5px dashed var(--line2);border-radius:var(--radius);padding:clamp(22px,3vw,34px);color:var(--soft)}
+.empty b{color:#fff;font-weight:600}
+
+/* role / tools */
+.spec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,44px)}
+@media (max-width:860px){.spec{grid-template-columns:minmax(0,1fr)}}
+.spec h3{font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;padding-top:12px;border-top:2px solid var(--fg);color:var(--soft)}
+.spec ul{list-style:none;margin:0;padding:0}
+.spec li{padding:8px 0;border-bottom:1px solid var(--line);font-size:16px}
+
+/* footer, next link, buttons */
+.foot{border-top:1px solid var(--line);padding:44px 0 60px;color:var(--soft);font-size:14px}
+.foot .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px 48px}
+@media (max-width:760px){.foot .wrap{grid-template-columns:minmax(0,1fr)}}
+.next{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;text-decoration:none;padding-top:clamp(48px,7vw,90px);padding-bottom:clamp(48px,7vw,90px);border-top:1px solid var(--line)}
+.next .h-l{transition:color .2s}
+.next:hover .h-l{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:var(--btn-radius);background:#F2F2F0;color:#0A0A0A;text-decoration:none;font:600 15px/1 var(--sans);border:1px solid #F2F2F0}
+.btn.ghost{background:transparent;color:#F2F2F0;border-color:var(--line2)}
+.btn:hover{background:var(--accent);color:#000;border-color:var(--accent)}
+.arrow{display:inline-block;transition:transform .2s}
+a:hover .arrow{transform:translateX(4px)}
+
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .rise.d1{animation-delay:.06s}.rise.d2{animation-delay:.12s}.rise.d3{animation-delay:.18s}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+}
+@media (max-width:600px){.frame:has(>.tag:not(.r))>.tag.r{top:auto;bottom:8px}}
+
+:root{--display:'Barlow Condensed','Arial Narrow',sans-serif;--sans:'Barlow','Helvetica Neue',Arial,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+--dw:800;--dcase:uppercase;--brand-track:.03em;--accent:#FF2D20;
+--xl:clamp(60px,11.6vw,190px);--xl-lh:.86;--track-xl:-.012em;
+--l:clamp(44px,6.8vw,110px);--l-lh:.9;--track-l:-.006em;--stmt:clamp(44px,7.6vw,128px);
+--m:clamp(30px,3.4vw,50px);--s:clamp(26px,2.4vw,34px);--track-m:0;--num:clamp(64px,7.6vw,116px);
+--name:clamp(88px,16.5vw,250px);--radius:3px;--tag-radius:2px;--btn-radius:2px}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="index.html"><i></i>Justin Leonard</a>
+  <ul><li><a href="ux.html">UX work</a></li><li class="hide-s"><a href="index.html#work">Portfolio</a></li><li><a href="ux.html#contact">Contact</a></li></ul>
+</div></nav>
+
+<header class="sec tight" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="mono soft rise">UX case study 05 &nbsp;/&nbsp; Game UX &nbsp;/&nbsp; NOXIE: PRIME CUT</div>
+    <h1 class="h-xl rise d1" style="margin-top:22px">Three playtests.<br><em class="a">Three new first minutes.</em></h1>
+    <p class="lede rise d2" style="margin-top:30px;color:#D5D3CC">A six-minute action-comedy game with a horror section, made in four days for a game jam. Every scripted test passed. I still got lost each time I played it. This is how three playtests, written down word for word, rewrote the way the game teaches itself.</p>
+    <div class="meta rise d3">
+      <div><span class="mono">Project</span><b>Entry for Epic AI MegaJam 2026, team Vyztra</b></div>
+      <div><span class="mono">My role</span><b>Game director and playtester</b></div>
+      <div><span class="mono">Timeline</span><b>Nov 12 to 15, 2026</b></div>
+      <div><span class="mono">Status</span><b>Submitted Nov 15, 3 hours 21 minutes before the deadline. Results due around Jan 29, 2027.</b></div>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:clamp(40px,6vw,72px)">
+    <figure class="fig" style="margin-top:0">
+      <div class="frame bordered rise d3"><img src="assets/ux-noxie-gulper-loaded.jpg" alt="Gameplay: Noxie, a small blue creature, on a cobbled street. A goal line at top left, a belly window showing a gulped tin, and a LOADED: KNOCK-DOWN SHOT line"><span class="tag">Gameplay capture</span></div>
+      <figcaption><span class="mono">The street</span><span>The goal line, the distance marker and the belly window were each added after a playtest.</span></figcaption>
+    </figure>
+  </div>
+</header>
+<style>
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:start}
+@media (max-width:900px){.split{grid-template-columns:minmax(0,1fr)}}
+.insight{margin-top:clamp(56px,8vw,100px);padding:clamp(28px,4vw,48px);border:1px solid var(--line);border-radius:18px;background:var(--bg2)}
+.pt{border-top:2px solid var(--accent);padding-top:18px}
+.pt+.pt{margin-top:clamp(36px,5vw,56px)}
+.pt .quote{margin-top:16px;font-size:clamp(18px,1.7vw,22px)}
+.fixes{list-style:none;margin:14px 0 0;padding:0}
+.fixes li{padding:8px 0 8px 22px;border-bottom:1px solid var(--line);position:relative;color:var(--soft);font-size:16px}
+.fixes li::before{content:"";position:absolute;left:0;top:17px;width:10px;height:2px;background:var(--accent)}
+.strip{margin-top:clamp(28px,4vw,48px)}
+</style>
+
+<section class="paper sec" id="problem">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">01</span><span class="mono">The challenge</span></div>
+      <h2 class="h-l">The tests passed. <em class="a">I was lost.</em></h2></div>
+    <div class="split">
+      <div>
+        <p class="lede">You play Noxie, a small blue creature sent on an errand for a "lightbulb" that turns out to be a living glowgrub. Street, rooftops, arcade, a soft-play hall, a breaker room where dolls move when you look away, and a prize-crane boss.</p>
+        <p class="soft">The verbs are simple: shoot, gulp and bash. Hold the right mouse button to gulp a prop or a small guard, then fire it back as a named special shot. Simple to describe. Hard to learn in the first minute, with no one beside you to explain it.</p>
+        <ul class="ledger" style="margin-top:32px">
+          <li><span class="k">01</span><div><h3>No goal on screen</h3><p>You started in the street with nothing telling you where to go or why.</p></div></li>
+          <li><span class="k">02</span><div><h3>Damage before the lesson</h3><p>You could die before you knew the gulp move existed.</p></div></li>
+          <li><span class="k">03</span><div><h3>Hidden state</h3><p>Nothing clearly showed whether a gulp had loaded a special shot.</p></div></li>
+        </ul>
+      </div>
+      <figure><div class="frame bordered"><img src="assets/ux-noxie-horror-cut-dolls.jpg" alt="The Horror Cut: doll-like guards in a dark purple soft-play room, Noxie in the foreground" loading="lazy" decoding="async"><span class="tag">Horror Cut</span></div><figcaption><span class="mono">The breaker room</span><span>The dolls move when you look away. The playtest called this room "thoroughly confusing".</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="playtests">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">02</span><span class="mono">Three playtests</span></div>
+      <h2 class="h-l">My words, <em class="a">then the fixes.</em></h2></div>
+    <div class="cols"><div class="spacer"></div><div class="body">
+      <p class="lede" style="color:#D5D3CC">AI agents built and tested the game under my direction. I played it, said what I saw out loud, and those words were written down as they were said. Each playtest became that day's fix list.</p>
+
+      <div class="pt" style="margin-top:40px">
+        <div class="mono soft">Playtest 1 &nbsp;/&nbsp; Nov 13, 13:40</div>
+        <blockquote class="quote">"Mouse sensitivity is insanely high."</blockquote>
+        <p class="soft" style="margin-top:12px">Also: a captured enemy "is not visually readable", and "The sound effects feel cheap."</p>
+        <ul class="fixes"><li>Mouse speed lowered, with [ and ] keys to adjust it</li><li>Hints on dark plates, never smaller than 26 px</li><li>A belly window that shows what you've captured</li><li>The character redesigned</li></ul>
+      </div>
+
+      <div class="pt">
+        <div class="mono soft">Playtest 2 &nbsp;/&nbsp; Nov 14, build 5b</div>
+        <blockquote class="quote">"There's no goal or mission. You're just thrown into it and not knowing what to do."</blockquote>
+        <blockquote class="quote">"I didn't know I had to go find the gulper to begin with, so I died pretty much immediately."</blockquote>
+        <blockquote class="quote">"Maybe when the game starts, it, like, pauses and you have to, like, click or something to acknowledge"</blockquote>
+        <blockquote class="quote">"I feel like there should be probably the main function that acts as just like a regular weapon"</blockquote>
+        <blockquote class="quote">"The break room is thoroughly confusing because I don't know what keeps killing me."</blockquote>
+        <ul class="fixes"><li>A premise card at the start, and no damage until the Gulper card is dismissed</li><li>An objective line and a marker; a player who does nothing survives 90 seconds</li><li>My weapon idea adopted: the basic shot never runs dry, and a gulp loads a named special</li><li>Breaker room: an entry card, a look-away lesson, a 0.9 second red-glow wind-up, a red HIT arrow, and progress that survives death</li><li>A windowed mode</li></ul>
+      </div>
+
+      <div class="pt">
+        <div class="mono soft">Playtest 3 &nbsp;/&nbsp; Nov 15, 10:45</div>
+        <blockquote class="quote">"I like the foundation."</blockquote>
+        <blockquote class="quote">"I could not clearly tell whether gulping an object actually changed my special ammunition."</blockquote>
+        <ul class="fixes"><li>A magenta LOADED: ... SHOT plate and ring</li><li>Doors that slam at the door line</li><li>An explainer card for the prize hall, and a marker on the open power cell</li><li>A GULP THIS marker</li><li>A 1.1 second camera hold on the first Cut</li></ul>
+      </div>
+    </div></div>
+    <div class="g2 fig">
+      <figure><div class="frame bordered"><img src="assets/ux-noxie-game-before.jpg" alt="Noxie before the redesign: furry blue head, crystal crest, holding a brass gulper" loading="lazy" decoding="async"><span class="tag">Before</span></div><figcaption><span class="mono">Character, before</span></figcaption></figure>
+      <figure><div class="frame bordered"><img src="assets/ux-noxie-game-after.jpg" alt="Noxie after the redesign: smooth darker blue skin and wings, same crest and gulper" loading="lazy" decoding="async"><span class="tag final">After</span></div><figcaption><span class="mono">Character, after</span><span>Redesigned after the first playtest.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="paper sec" id="review">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">03</span><span class="mono">The rule</span></div><div></div></div>
+    <p class="statement">"Do not downgrade these observations because <em class="a">automated tests passed."</em></p>
+    <div class="cols" style="margin-top:clamp(40px,6vw,72px)"><div class="spacer"></div><div class="body">
+      <p class="lede">My instruction to the team with the third playtest, Nov 15. The final packaged chapter passed 509 of 509 scripted checks. None of them could measure whether a first-time player knew what to do.</p>
+    </div></div>
+    <div class="insight">
+      <div class="mono" style="color:var(--accent)">The insight</div>
+      <p class="h-m" style="margin-top:14px">Scripted tests passed while I was lost, three times. Next time: <em class="a">a first-minute spec before the first build, and one cold player a day.</em></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="solution">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">04</span><span class="mono">The solution</span></div>
+      <h2 class="h-l">Teach it on screen, <em class="a">one thing at a time.</em></h2></div>
+    <div class="g2">
+      <figure><div class="frame bordered"><img src="assets/ux-noxie-c7-boss-before.jpg" alt="Prize hall before: a dark hall with labels floating everywhere and no instruction" loading="lazy" decoding="async"><span class="tag">Before</span></div><figcaption><span class="mono">Prize hall, before</span><span>Labels everywhere, no instruction.</span></figcaption></figure>
+      <figure><div class="frame bordered"><img src="assets/ux-noxie-c7-boss-card.jpg" alt="Prize hall after: an explainer card reading The prize crane guards the glowgrubs. When its power cell opens, gulp a crate and launch it at the cell" loading="lazy" decoding="async"><span class="tag final">After</span></div><figcaption><span class="mono">Prize hall, after</span><span>One card, one rule, then the fight.</span></figcaption></figure>
+    </div>
+    <figure class="fig strip">
+      <div class="frame bordered"><img src="assets/ux-noxie-c7-strip-loaded.jpg" alt="Three frames: empty belly, then LOADED: CRATE SHOT in magenta after a gulp, then the shot firing" loading="lazy" decoding="async"></div>
+      <figcaption><span class="mono">Empty, loaded, firing</span><span>The magenta LOADED plate answers playtest 3's question before the player has to ask it.</span></figcaption>
+    </figure>
+    <figure class="fig">
+      <div class="frame bordered"><img src="assets/ux-noxie-the-cut.jpg" alt="The soft-play hall in pastel colours with a stage of doll-like guards and Noxie in the foreground" loading="lazy" decoding="async"></div>
+      <figcaption><span class="mono">The soft-play hall</span><span>Gameplay capture from the submitted game's store page.</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="paper sec" id="results">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">05</span><span class="mono">Results</span></div>
+      <h2 class="h-l">What I can prove, and <em class="a">what I can't yet.</em></h2></div>
+    <div class="nums">
+      <div class="num"><div class="v">3</div><p>Playtests, each one turned into that day's fix list.</p></div>
+      <div class="num"><div class="v">509</div><p>Scripted checks passed on the packaged chapter, out of 509.</p></div>
+      <div class="num"><div class="v">60</div><p>Frames per second, measured 59.5 to 60, with 17 of 17 clean exits.</p></div>
+      <div class="num"><div class="v">3:21</div><p>Hours and minutes to spare at submission.</p></div>
+    </div>
+    <p class="soft" style="margin-top:28px;max-width:820px">About 18 packaged builds were made; I played 3 of them. The jam brief asked for 15 to 25 minutes of play; the game shipped at about 6. Play it at <a href="https://justleonard.itch.io/noxie-prime-cut" target="_blank" rel="noopener">justleonard.itch.io/noxie-prime-cut</a>, or read the <a href="https://vyztra.github.io/noxie-prime-cut-devlog" target="_blank" rel="noopener">dev log</a>.</p>
+    <div class="empty" style="margin-top:36px"><b>Not proven yet: a cold player.</b> No one outside the project has playtested it, and nobody playtested the final submitted build. There are no accessibility options: threats are cued by red alone, with no control remapping or subtitles, and one flash frame goes over the project's own limit. A controller is untested and the sound was never checked by ear. Jam results are due around Jan 29, 2027. This slot stays empty until those are answered.</div>
+
+    <div class="spec" style="margin-top:clamp(56px,8vw,96px)">
+      <div><h3>My role</h3><ul><li>Game direction</li><li>Playtesting, recorded verbatim</li><li>First-minute and onboarding calls</li><li>Directing a team of AI agents</li></ul></div>
+      <div><h3>Tools</h3><ul><li>Unreal Engine 5 on an Apple silicon Mac</li><li>AI agents for building and scripted testing</li><li>Built with an AI-assisted workflow</li></ul></div>
+      <div><h3>What I'd tell the next team</h3><ul><li>Write the first-minute spec before the first build.</li><li>Put one cold player in front of it every day.</li><li>Never cue a threat with colour alone.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<a class="wrap next" href="ux.html">
+  <div><div class="mono soft">Back to</div><div class="h-l" style="margin-top:12px">All UX work</div></div>
+  <span class="btn ghost">See all five <span class="arrow">&rarr;</span></span>
+</a>
+
+<footer class="foot"><div class="wrap">
+  <div><a class="brand" href="index.html"><i></i>Justin Leonard</a><p style="margin-top:12px">justin@just-leonard.com</p></div>
+  <p>Game jam entry made for Epic AI MegaJam 2026. Images are gameplay captures and development frames from the game. Unreal Engine is a trademark of Epic Games. No ownership claim is made here over the character model or any third-party assets.</p>
+</div></footer>
+</body>
+
+</html>

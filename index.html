@@ -171,7 +171,7 @@ a:hover .arrow{transform:translateX(4px)}
 
 <nav class="nav"><div class="wrap">
   <a class="brand" href="#top"><i></i>Justin Leonard</a>
-  <ul><li><a href="#work">Work</a></li><li class="hide-s"><a href="#approach">Approach</a></li><li class="hide-s"><a href="#credentials">Credentials</a></li><li><a href="#contact">Contact</a></li></ul>
+  <ul><li><a href="#work">Work</a></li><li><a href="ux.html">UX work</a></li><li class="hide-s"><a href="#approach">Approach</a></li><li class="hide-s"><a href="#credentials">Credentials</a></li><li><a href="#contact">Contact</a></li></ul>
 </div></nav>
 
 <header class="hero" id="top">
@@ -258,8 +258,17 @@ a.cred:hover b{color:var(--accent)}
         <span class="more">Read the case study <span class="arrow">&rarr;</span></span>
       </a>
     </div>
+
+    <a class="uxband" href="ux.html">
+      <div><div class="mono soft">UX and product design</div><h3 class="h-m" style="margin-top:10px">Five case studies, <em class="a">evidence first.</em></h3></div>
+      <span class="more">See the UX work <span class="arrow">&rarr;</span></span>
+    </a>
   </div>
 </section>
+<style>
+.uxband{display:flex;justify-content:space-between;align-items:end;gap:16px 32px;flex-wrap:wrap;margin-top:clamp(56px,8vw,96px);padding-top:clamp(28px,4vw,40px);border-top:2px solid var(--accent);text-decoration:none}
+.uxband:hover .h-m{color:var(--accent)}
+</style>
 <style>
 .tile{display:block;text-decoration:none;color:inherit}
 .tile p{color:var(--soft);margin:10px 0 0;max-width:560px}

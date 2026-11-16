@@ -1,6 +1,6 @@
 # Justin Leonard, portfolio site
 
-A static four-page portfolio: the one-page overview plus three case studies.
+A static nine-page portfolio: the one-page overview, three creative case studies, and a UX section (a landing page plus four UX case studies).
 
 | Page | File |
 |---|---|
@@ -8,6 +8,11 @@ A static four-page portfolio: the one-page overview plus three case studies.
 | Trailer wrap case study | `trailer-wrap.html` |
 | Dealer website concept case study | `website-concept.html` |
 | Horror game case study | `horror-concept.html` |
+| UX and product design landing page | `ux.html` |
+| Research tool case study | `research-tool.html` |
+| Agency platform case study | `agency-platform.html` |
+| Find case study | `find.html` |
+| NOXIE game UX case study | `noxie.html` |
 
 Everything the pages use is in `assets/` (images, videos, share images). All links between pages are relative, so the folder works from any address, including a sub-path. Fonts load from Google Fonts; the Vimeo and LinkedIn links are the only other outside links.
 

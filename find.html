@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Find Case Study, Justin Leonard</title>
+<meta name="description" content="One search door to everything I make, honest about what it didn't search.">
+<meta name="author" content="Justin Leonard">
+<meta name="theme-color" content="#0A0A0A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Justin Leonard">
+<meta property="og:title" content="Find Case Study, Justin Leonard">
+<meta property="og:description" content="One search door to everything I make, honest about what it didn't search.">
+<meta property="og:image" content="https://vyztra.github.io/portfolio/assets/og-find.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://vyztra.github.io/portfolio/find.html">
+<link rel="canonical" href="https://vyztra.github.io/portfolio/find.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Find Case Study, Justin Leonard">
+<meta name="twitter:description" content="One search door to everything I make, honest about what it didn't search.">
+<meta name="twitter:image" content="https://vyztra.github.io/portfolio/assets/og-find.jpg">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Shared system. Theme-specific values (fonts, display weight, case, accent, sizes) come from the
+   theme block build.py appends after this file. Everything here reads those variables. */
+:root{
+  --bg:#0A0A0A;--bg2:#121212;--bg3:#1A1A1A;
+  --fg:#F2F2F0;--soft:#A3A3A3;--dim:#8C8C8C;
+  --line:#262626;--line2:#3A3A3A;
+  --gut:clamp(16px,4.2vw,56px);
+  --max:1320px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.mono{font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+em.a,.a{font-style:normal;color:var(--dim)}
+.soft{color:var(--soft)}
+.paper{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(10,10,10,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.brand{display:inline-flex;align-items:center;gap:10px;font:var(--dw) 22px/1 var(--display);text-transform:var(--dcase);letter-spacing:var(--brand-track);text-decoration:none;white-space:nowrap}
+.brand i{display:inline-block;width:10px;height:10px;background:var(--accent)}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:var(--soft);font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.nav ul a:hover{color:#fff}
+@media (max-width:760px){.nav ul li.hide-s{display:none}.nav ul{gap:16px}}
+
+/* type scale: display font, weight, case and tracking come from the theme */
+.h-xl,.h-l,.h-m,.h-s,.statement{font-family:var(--display);font-weight:var(--dw);margin:0}
+.h-xl{font-size:var(--xl);line-height:var(--xl-lh);letter-spacing:var(--track-xl);text-transform:var(--dcase)}
+.h-l{font-size:var(--l);line-height:var(--l-lh);letter-spacing:var(--track-l);text-transform:var(--dcase)}
+.statement{font-size:var(--stmt);line-height:var(--l-lh);letter-spacing:var(--track-l);text-transform:var(--dcase);max-width:1200px}
+.h-m{font-size:var(--m);line-height:1.04;letter-spacing:var(--track-m)}
+.h-s{font-size:var(--s);line-height:1.1;letter-spacing:var(--track-m)}
+.lede{font:400 clamp(19px,1.9vw,24px)/1.5 var(--sans);letter-spacing:-.005em;max-width:820px}
+p{margin:0 0 16px}
+
+/* section scaffolding */
+.sec{padding:clamp(80px,11vw,150px) 0}
+.sec.tight{padding-top:clamp(40px,6vw,80px)}
+.sec-head{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:20px 40px;align-items:start;margin-bottom:clamp(36px,5vw,64px)}
+.sec-head .idx{display:flex;flex-direction:column;gap:8px;padding-top:12px;border-top:2px solid var(--accent)}
+.sec-head .idx .n{font:var(--dw) 40px/1 var(--display);color:var(--fg)}
+.sec-head .idx .mono{color:var(--soft)}
+@media (max-width:860px){.sec-head{grid-template-columns:1fr}.sec-head .idx{flex-direction:row;align-items:baseline;gap:14px}}
+.cols{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:0 40px}
+.cols>.body{max-width:720px}
+@media (max-width:860px){.cols{grid-template-columns:1fr}.cols>.spacer{display:none}}
+
+/* figures */
+figure{margin:0}
+.fig{margin-top:clamp(28px,4vw,48px)}
+.frame{position:relative;border-radius:var(--radius);overflow:hidden;background:#1B1B1B}
+.frame.bordered{border:1px solid var(--line)}
+.frame img,.frame video{width:100%;height:auto}
+figcaption{display:flex;gap:8px 16px;flex-wrap:wrap;align-items:baseline;margin-top:12px;font-size:14px;line-height:1.5;color:var(--soft)}
+figcaption .mono{color:var(--fg);flex:none}
+.tag{position:absolute;top:12px;left:12px;z-index:2;font:600 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border-radius:var(--tag-radius);background:rgba(10,10,10,.85);color:#fff;border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px)}
+.tag.ai{background:var(--accent);border-color:var(--accent);color:#000}
+.tag.final{background:#F2F2F0;color:#0A0A0A;border-color:#F2F2F0}
+.tag.r{left:auto;right:12px}
+@media (max-width:600px){.tag{top:8px;left:8px;padding:5px 7px;letter-spacing:.05em}.tag.r{right:8px}}
+/* crop: show one region of a larger source image without editing the file */
+.crop{position:relative;overflow:hidden}
+.crop>img{position:absolute;max-width:none;height:auto}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,22px)}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,22px)}
+@media (max-width:760px){.g2,.g3{grid-template-columns:minmax(0,1fr)}}
+.g3.keep2{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:760px){.g3.keep2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* meta row */
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;border-top:1px solid var(--line);padding-top:20px;margin-top:clamp(40px,6vw,72px)}
+.meta b{display:block;font:500 16px/1.4 var(--sans);margin-top:8px;color:#fff}
+.meta .mono{color:var(--soft)}
+@media (max-width:860px){.meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ledger lists */
+.ledger{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.ledger li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.ledger .k{font:var(--dw) 28px/1 var(--display);color:var(--accent)}
+.ledger h3{font:600 18px/1.35 var(--sans);margin:0 0 4px;color:#fff}
+.ledger p{margin:0;color:var(--soft)}
+
+/* quote */
+.quote{border-left:3px solid var(--accent);padding:4px 0 4px 22px;margin:28px 0 0;font:500 clamp(20px,2vw,26px)/1.4 var(--sans);max-width:760px;color:#fff}
+.quote cite{display:block;margin-top:10px;font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;font-style:normal;color:var(--soft)}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+@media (max-width:860px){.nums{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.num{border-top:2px solid var(--fg);padding-top:14px}
+.num .v{font-family:var(--display);font-weight:var(--dw);font-size:var(--num);line-height:.9;letter-spacing:var(--track-l);display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.num .v small{font:500 13px/1 var(--mono);letter-spacing:.08em;color:var(--soft)}
+.num .v .to{color:var(--accent)}
+.num p{font-size:15px;margin:10px 0 0;color:var(--soft)}
+
+/* empty room */
+.empty{border:1.5px dashed var(--line2);border-radius:var(--radius);padding:clamp(22px,3vw,34px);color:var(--soft)}
+.empty b{color:#fff;font-weight:600}
+
+/* role / tools */
+.spec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,44px)}
+@media (max-width:860px){.spec{grid-template-columns:minmax(0,1fr)}}
+.spec h3{font:500 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;padding-top:12px;border-top:2px solid var(--fg);color:var(--soft)}
+.spec ul{list-style:none;margin:0;padding:0}
+.spec li{padding:8px 0;border-bottom:1px solid var(--line);font-size:16px}
+
+/* footer, next link, buttons */
+.foot{border-top:1px solid var(--line);padding:44px 0 60px;color:var(--soft);font-size:14px}
+.foot .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px 48px}
+@media (max-width:760px){.foot .wrap{grid-template-columns:minmax(0,1fr)}}
+.next{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;text-decoration:none;padding-top:clamp(48px,7vw,90px);padding-bottom:clamp(48px,7vw,90px);border-top:1px solid var(--line)}
+.next .h-l{transition:color .2s}
+.next:hover .h-l{color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:var(--btn-radius);background:#F2F2F0;color:#0A0A0A;text-decoration:none;font:600 15px/1 var(--sans);border:1px solid #F2F2F0}
+.btn.ghost{background:transparent;color:#F2F2F0;border-color:var(--line2)}
+.btn:hover{background:var(--accent);color:#000;border-color:var(--accent)}
+.arrow{display:inline-block;transition:transform .2s}
+a:hover .arrow{transform:translateX(4px)}
+
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .rise.d1{animation-delay:.06s}.rise.d2{animation-delay:.12s}.rise.d3{animation-delay:.18s}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+}
+@media (max-width:600px){.frame:has(>.tag:not(.r))>.tag.r{top:auto;bottom:8px}}
+
+:root{--display:'Barlow Condensed','Arial Narrow',sans-serif;--sans:'Barlow','Helvetica Neue',Arial,sans-serif;--mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+--dw:800;--dcase:uppercase;--brand-track:.03em;--accent:#FF2D20;
+--xl:clamp(60px,11.6vw,190px);--xl-lh:.86;--track-xl:-.012em;
+--l:clamp(44px,6.8vw,110px);--l-lh:.9;--track-l:-.006em;--stmt:clamp(44px,7.6vw,128px);
+--m:clamp(30px,3.4vw,50px);--s:clamp(26px,2.4vw,34px);--track-m:0;--num:clamp(64px,7.6vw,116px);
+--name:clamp(88px,16.5vw,250px);--radius:3px;--tag-radius:2px;--btn-radius:2px}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="index.html"><i></i>Justin Leonard</a>
+  <ul><li><a href="ux.html">UX work</a></li><li class="hide-s"><a href="index.html#work">Portfolio</a></li><li><a href="ux.html#contact">Contact</a></li></ul>
+</div></nav>
+
+<header class="sec tight" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="mono soft rise">UX case study 04 &nbsp;/&nbsp; Find &nbsp;/&nbsp; Personal search tool</div>
+    <h1 class="h-xl rise d1" style="margin-top:22px">I kept losing<br>my own <em class="a">work.</em></h1>
+    <p class="lede rise d2" style="margin-top:30px;color:#D5D3CC">Pages, decks, notes, prototypes and AI sessions, spread across a Mac, a notes vault and several libraries. I couldn't find any of it. So I designed one search door for all of it, saw the plan before anything was built, shipped it in four releases, and set the pass bar before calling it a success.</p>
+    <div class="meta rise d3">
+      <div><span class="mono">Client</span><b>Self-initiated, for my own work system</b></div>
+      <div><span class="mono">My role</span><b>Problem framing, visual direction, privacy rules, pass bar, testing</b></div>
+      <div><span class="mono">Timeline</span><b>Nov 4 to 10, 2026: plan, look, four releases</b></div>
+      <div><span class="mono">Status</span><b>Running on my Mac. Its own pass bar not met yet.</b></div>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:clamp(40px,6vw,72px)">
+    <figure class="browser rise d3">
+      <div class="bar"><span></span><span></span><span></span><em class="mono">Find v2.3, running on a demo list of fictional files</em></div>
+      <img src="assets/ux-find-results-1280.jpg" alt="Find results for fernway menu: a list on the left, and a preview of a menu PDF with its path, a text snippet and an Open button">
+    </figure>
+  </div>
+</header>
+<style>
+.browser{border-radius:14px;overflow:hidden;background:#1A1D1A;border:1px solid var(--line);box-shadow:0 40px 90px rgba(0,0,0,.5)}
+.browser .bar{display:flex;align-items:center;gap:7px;height:36px;padding:0 14px;border-bottom:1px solid var(--line)}
+.browser .bar span{width:10px;height:10px;border-radius:50%;background:#3A3F3A}
+.browser .bar em{font-style:normal;margin-left:12px;color:var(--soft);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.browser img{width:100%}
+.phone{border-radius:26px;overflow:hidden;border:6px solid #1F231F;background:#1F231F;aspect-ratio:0.56;position:relative}
+.paper .phone{border-color:#121312;background:#121312}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:top}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,300px));gap:clamp(16px,3vw,40px);justify-content:center}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:start}
+@media (max-width:900px){.split{grid-template-columns:minmax(0,1fr)}}
+.insight{margin-top:clamp(56px,8vw,100px);padding:clamp(28px,4vw,48px);border:1px solid var(--line);border-radius:18px;background:var(--bg2)}
+.track{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;list-style:none;padding:0;margin:clamp(40px,6vw,64px) 0 0}
+.track li{border-top:2px solid var(--line2);padding-top:12px;color:var(--soft)}
+.track li.on{border-color:var(--accent);color:var(--fg)}
+.track b{display:block;font:var(--dw) clamp(24px,2.6vw,36px)/1 var(--display);text-transform:var(--dcase)}
+.track span{display:block;margin-top:8px;font-size:14px;line-height:1.45}
+@media (max-width:760px){.track{grid-template-columns:repeat(2,minmax(0,1fr))}.track li:first-child{grid-column:span 2}}
+</style>
+
+<section class="paper sec" id="problem">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">01</span><span class="mono">The challenge</span></div>
+      <h2 class="h-l">Folders inside folders, <em class="a">and no door.</em></h2></div>
+    <div class="split">
+      <div>
+        <p class="lede">I build a lot with AI agents, quickly. Every tool made its own home for its output, and I was the one left hunting. The same complaint shows up in my own words from mid-October into November.</p>
+        <ul class="ledger" style="margin-top:32px">
+          <li><span class="k">01</span><div><h3>Too many places</h3><p>A Mac, a notes vault, an AI idea library, a work library and old AI sessions, each with its own way in.</p></div></li>
+          <li><span class="k">02</span><div><h3>Clashing tools</h3><p>By Nov 6 the count was three doors and five search boxes, all built to fix the same problem.</p></div></li>
+          <li><span class="k">03</span><div><h3>Private records mixed in</h3><p>Some files must never show up in a search, however well it matches.</p></div></li>
+        </ul>
+      </div>
+      <div>
+        <blockquote class="quote" style="margin-top:0">"i still feel like i've overcomplicated this whole system."<cite>Oct 16, 2026</cite></blockquote>
+        <blockquote class="quote">"...it's overwhelming and I keep having to hunt and find folders inside of folders and not truly knowing where everything is."<cite>Oct 23, 2026</cite></blockquote>
+        <blockquote class="quote">"i cannot seem to ever find the stuff we make"<cite>Nov 2, 2026</cite></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">02</span><span class="mono">Plan and look</span></div><div></div></div>
+    <p class="statement">Six routes on the table. <em class="a">I picked the smallest.</em></p>
+    <div class="cols" style="margin-top:clamp(40px,6vw,72px)"><div class="spacer"></div><div class="body">
+      <p class="lede" style="color:#D5D3CC">The plan went through five drafts on Nov 4 and laid out six routes, from a full platform down to repairing what was already there. I chose search first. Then three looks, shown as pages I could see rather than described.</p>
+      <ul class="ledger" style="margin-top:32px">
+        <li><span class="k">A</span><div><h3>Calm</h3><p>Apple-like: quiet type, lots of room. "i like apple's website look and functions too."</p></div></li>
+        <li><span class="k">B</span><div><h3>Clear</h3><p>monday.com-like: status pills and colour everywhere.</p></div></li>
+        <li><span class="k">C</span><div><h3>Blend, chosen</h3><p>Apple's calm, with colour only when something needs me.</p></div></li>
+      </ul>
+      <blockquote class="quote">"i like look c and want to start with that one. before building, i want to see the plan layed out visually for me so i can make tweaks before wasting tokens on builds."<cite>Nov 6, 2026, 10:50</cite></blockquote>
+    </div></div>
+  </div>
+</section>
+
+<section class="paper sec" id="review">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">03</span><span class="mono">The visual plan</span></div>
+      <h2 class="h-l">See the plan, <em class="a">then build.</em></h2></div>
+    <p class="lede">The visual plan showed the whole road as five steps, with only the first one built. Two things in the design were switched off on purpose: an Ask button and status pills, because neither could work in the first build.</p>
+    <ol class="track" aria-label="The five-step plan">
+      <li class="on"><b>Find</b><span>Built: v1 Nov 6, v2 Nov 9, v2.1 and v2.3 Nov 10</span></li>
+      <li><b>Reach</b><span>Not built</span></li>
+      <li><b>See</b><span>Not built</span></li>
+      <li><b>Change</b><span>Not built</span></li>
+      <li><b>Talk</b><span>Not built</span></li>
+    </ol>
+    <div class="split" style="margin-top:clamp(40px,6vw,64px)">
+      <div>
+        <blockquote class="quote" style="margin-top:0">"Looks right, build Find"<cite>Nov 6, 2026, 11:51</cite></blockquote>
+        <blockquote class="quote">"I think i've got clashing ideas and tools i've created... so my goal is to plan the ONE system/tool/software..."<cite>Nov 6, 2026, 13:34</cite></blockquote>
+      </div>
+      <div class="insight" style="margin-top:0">
+        <div class="mono" style="color:var(--accent)">The decision</div>
+        <p class="h-m" style="margin-top:14px">Three doors and five search boxes became <em class="a">one door, with tabs across the top.</em></p>
+        <p class="soft" style="margin-top:14px;margin-bottom:0">Find became the front page; the other libraries open as tabs inside it (v2, Nov 9), down to phone width.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="solution">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">04</span><span class="mono">The solution</span></div>
+      <h2 class="h-l">It says what it <em class="a">didn't search.</em></h2></div>
+    <div class="g2">
+      <figure><div class="frame bordered"><img src="assets/ux-find-home-1280.jpg" alt="Find home: Find anything, a search box, then Made lately and Open last lists" loading="lazy" decoding="async"></div><figcaption><span class="mono">Home</span><span>One box. Below it, what I made lately and what I opened last, so a recent file is one click away.</span></figcaption></figure>
+      <figure><div class="frame bordered"><img src="assets/ux-find-empty-1280.jpg" alt="Nothing found screen listing what was checked and what is not checked yet, and that private records stay out on purpose" loading="lazy" decoding="async"></div><figcaption><span class="mono">Nothing found, honestly</span><span>It lists what it checked, what it hasn't checked yet, and that private records stay out on purpose. The miss is logged, so the next source to add comes from real misses.</span></figcaption></figure>
+    </div>
+    <div class="split fig">
+      <ul class="ledger">
+        <li><span class="k">01</span><div><h3>A "Searched..." line on every result</h3><p>Which sources were searched, how many backup and build copies were hidden, and how fresh the list is.</p></div></li>
+        <li><span class="k">02</span><div><h3>Copies counted, not shown</h3><p>Old drafts and export copies collapse under the newest one, so the top result is the file I mean.</p></div></li>
+        <li><span class="k">03</span><div><h3>Four privacy walls</h3><p>Private records are kept out of the list itself, not just hidden on screen, so search can't surface them.</p></div></li>
+        <li><span class="k">04</span><div><h3>Preview, then Open</h3><p>A preview with the path and the matching passage, and one Open button, with arrow keys and Enter for the keyboard.</p></div></li>
+      </ul>
+      <div class="pair">
+        <figure><div class="phone"><img src="assets/ux-find-home-390.jpg" alt="Find home on a phone" loading="lazy" decoding="async"></div><figcaption><span class="mono">Phone, home</span></figcaption></figure>
+        <figure><div class="phone"><img src="assets/ux-find-results-390.jpg" alt="Find results on a phone with the preview first" loading="lazy" decoding="async"></div><figcaption><span class="mono">Phone, results</span></figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="paper sec" id="results">
+  <div class="wrap">
+    <div class="sec-head"><div class="idx"><span class="n">05</span><span class="mono">Results</span></div>
+      <h2 class="h-l">What I can prove, and <em class="a">what I can't yet.</em></h2></div>
+    <div class="nums">
+      <div class="num"><div class="v">4</div><p>Releases in five days: v1, v2, v2.1, v2.3.</p></div>
+      <div class="num"><div class="v">75k</div><p>Items in the list on Nov 16, about 45,000 of them shown in search after copies and clutter are hidden.</p></div>
+      <div class="num"><div class="v">5 <span class="to">of 6</span></div><p>Real hunts that landed in the top 3 results.</p></div>
+      <div class="num"><div class="v">3 <span class="to">of 10</span></div><p>Weekdays I opened it, against a bar of 5 of 10.</p></div>
+    </div>
+    <p class="soft" style="margin-top:28px;max-width:820px">I set the pass bar before judging it: 8 of 10 real hunts found, and Find opened on 5 of 10 weekdays. Hunts: 5 of 6 so far, with 4 slots still open, so that half can't be judged yet. Use is not: 3 of the first 10 weekdays, with 7 of them gone by. v2 was checked across 22 screens, 11 at Mac width and 11 at phone width.</p>
+    <div class="empty" style="margin-top:36px"><b>Not proven yet: that it changed my habits.</b> The hunt test isn't finished and daily use is below the bar I set. Nobody else has used it. Reach, See, Change and Talk aren't built. This slot stays empty until the bar is met.</div>
+
+    <div class="spec" style="margin-top:clamp(56px,8vw,96px)">
+      <div><h3>My role</h3><ul><li>Problem framing from my own complaints</li><li>Route and look decisions</li><li>Privacy rules</li><li>Pass bar and hunt test</li></ul></div>
+      <div><h3>Tools</h3><ul><li>AI agents, built with an AI-assisted workflow</li><li>A local full-text search index</li><li>Automated page tests at Mac and phone width</li></ul></div>
+      <div><h3>What I'd tell the next team</h3><ul><li>Write the pass bar before the build.</li><li>Say what you didn't search.</li><li>Count real use, not launches.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<a class="wrap next" href="noxie.html">
+  <div><div class="mono soft">Next case study</div><div class="h-l" style="margin-top:12px">NOXIE: PRIME CUT</div></div>
+  <span class="btn ghost">Read it <span class="arrow">&rarr;</span></span>
+</a>
+
+<footer class="foot"><div class="wrap">
+  <div><a class="brand" href="index.html"><i></i>Justin Leonard</a><p style="margin-top:12px">justin@just-leonard.com</p></div>
+  <p>Personal tool. The screens run the real Find page on a demo list of fictional files and businesses, not my own files. One source name in the search line is shortened to "AI sessions" in these captures. Counts are from Find's own list and hunt-test report, read Nov 16, 2026.</p>
+</div></footer>
+</body>
+
+</html>
